@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "curvytext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alyxferrari/CurvyText",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "f9bd02036761cf0ce44407b38008fe2d71fc3830"
+      }
+    },
+    {
+      "identity" : "time",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/davedelong/time",
+      "state" : {
+        "branch" : "master",
+        "revision" : "3237cc4a47c88a603b8148a95d40caf0859d3db7"
+      }
+    }
+  ],
+  "version" : 2
+}

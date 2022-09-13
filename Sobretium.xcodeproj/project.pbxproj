@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C72DAC328D1049200EDAFCF /* SobrietyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C72DAC228D1049200EDAFCF /* SobrietyList.swift */; };
 		1C91B1DF28D0F2E00062C18A /* SobretiumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */; };
 		1C91B1E128D0F2E00062C18A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91B1E028D0F2E00062C18A /* ContentView.swift */; };
 		1C91B1E328D0F2E30062C18A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C91B1E228D0F2E30062C18A /* Assets.xcassets */; };
 		1C91B1E628D0F2E30062C18A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C91B1E528D0F2E30062C18A /* Preview Assets.xcassets */; };
+		1CF24EB828D0F35C000E75A5 /* NewTimerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */; };
+		1CF24EB928D0F35C000E75A5 /* SobrietyRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */; };
+		1CF24EBA28D0F35C000E75A5 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB628D0F35C000E75A5 /* Ring.swift */; };
+		1CF24EBD28D0F39A000E75A5 /* PathText in Frameworks */ = {isa = PBXBuildFile; productRef = 1CF24EBC28D0F39A000E75A5 /* PathText */; };
+		1CF24EC028D0F588000E75A5 /* Time in Frameworks */ = {isa = PBXBuildFile; productRef = 1CF24EBF28D0F588000E75A5 /* Time */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C72DAC228D1049200EDAFCF /* SobrietyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobrietyList.swift; sourceTree = "<group>"; };
 		1C91B1DB28D0F2E00062C18A /* Sobretium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sobretium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobretiumApp.swift; sourceTree = "<group>"; };
 		1C91B1E028D0F2E00062C18A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1C91B1E228D0F2E30062C18A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C91B1E528D0F2E30062C18A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTimerSheet.swift; sourceTree = "<group>"; };
+		1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobrietyRings.swift; sourceTree = "<group>"; };
+		1CF24EB628D0F35C000E75A5 /* Ring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF24EBD28D0F39A000E75A5 /* PathText in Frameworks */,
+				1CF24EC028D0F588000E75A5 /* Time in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +65,10 @@
 			children = (
 				1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */,
 				1C91B1E028D0F2E00062C18A /* ContentView.swift */,
+				1C72DAC228D1049200EDAFCF /* SobrietyList.swift */,
+				1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */,
+				1CF24EB628D0F35C000E75A5 /* Ring.swift */,
+				1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */,
 				1C91B1E228D0F2E30062C18A /* Assets.xcassets */,
 				1C91B1E428D0F2E30062C18A /* Preview Content */,
 			);
@@ -83,6 +99,10 @@
 			dependencies = (
 			);
 			name = Sobretium;
+			packageProductDependencies = (
+				1CF24EBC28D0F39A000E75A5 /* PathText */,
+				1CF24EBF28D0F588000E75A5 /* Time */,
+			);
 			productName = Sobretium;
 			productReference = 1C91B1DB28D0F2E00062C18A /* Sobretium.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +131,10 @@
 				Base,
 			);
 			mainGroup = 1C91B1D228D0F2E00062C18A;
+			packageReferences = (
+				1CF24EBB28D0F39A000E75A5 /* XCRemoteSwiftPackageReference "CurvyText" */,
+				1CF24EBE28D0F587000E75A5 /* XCRemoteSwiftPackageReference "time" */,
+			);
 			productRefGroup = 1C91B1DC28D0F2E00062C18A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF24EBA28D0F35C000E75A5 /* Ring.swift in Sources */,
 				1C91B1E128D0F2E00062C18A /* ContentView.swift in Sources */,
+				1CF24EB828D0F35C000E75A5 /* NewTimerSheet.swift in Sources */,
+				1CF24EB928D0F35C000E75A5 /* SobrietyRings.swift in Sources */,
+				1C72DAC328D1049200EDAFCF /* SobrietyList.swift in Sources */,
 				1C91B1DF28D0F2E00062C18A /* SobretiumApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +367,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1CF24EBB28D0F39A000E75A5 /* XCRemoteSwiftPackageReference "CurvyText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alyxferrari/CurvyText";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		1CF24EBE28D0F587000E75A5 /* XCRemoteSwiftPackageReference "time" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davedelong/time";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1CF24EBC28D0F39A000E75A5 /* PathText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CF24EBB28D0F39A000E75A5 /* XCRemoteSwiftPackageReference "CurvyText" */;
+			productName = PathText;
+		};
+		1CF24EBF28D0F588000E75A5 /* Time */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CF24EBE28D0F587000E75A5 /* XCRemoteSwiftPackageReference "time" */;
+			productName = Time;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1C91B1D328D0F2E00062C18A /* Project object */;
 }
