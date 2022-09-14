@@ -12,30 +12,44 @@ struct ContentView: View {
     @State var date2: Date = Date(timeIntervalSince1970: 1631000000)
     @State var type: Bool = false
     @State var isPresented: Bool = false
-    @State var list: SobrietyList = SobrietyList()
+    @State var list: [SobrietyEntry] = []
     var body: some View {
         NavigationView {
-            List {
-                // foreach in list
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        isPresented = true
-                    } label: {
-                        Image(systemName: "plus")
-                            .resizable()
+            VStack {
+                List {
+                    if list.count == 0 {
+                        Text("No Saved Trackers")
+                    }
+                    ForEach(list) { entry in
+                        NavigationLink {
+                            entry.rings
+                        } label: {
+                            Text(entry.name)
+                        }
+                    }
+                    .onDelete(perform: deleteAddiction)
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            isPresented = true
+                        } label: {
+                            Image(systemName: "plus")
+                                .resizable()
+                        }
                     }
                 }
-            }
-            .sheet(isPresented: $isPresented) {
-                NewTimerSheet($list, $isPresented)
+                .sheet(isPresented: $isPresented) {
+                    NewTimerSheet($list, $isPresented)
+                }
+                List {
+                    // settings
+                }
             }
         }
     }
-    func fart() {
-        let clock = Clocks.system
-        let time = clock.thisInstant()
+    func deleteAddiction(at offset: IndexSet) {
+        list.remove(atOffsets: offset)
     }
 }
 

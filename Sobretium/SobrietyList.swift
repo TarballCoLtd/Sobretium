@@ -5,11 +5,13 @@
 //  Created by Alyx Ferrari on 9/13/22.
 //
 
-struct SobrietyList {
-    var entries: [SobrietyEntry] = []
-}
+import Foundation
 
-struct SobrietyEntry {
+struct SobrietyEntry: Identifiable, Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.id == rhs.id
+    }
     var name: String
     var rings: SobrietyRings
+    let id = UUID()
 }

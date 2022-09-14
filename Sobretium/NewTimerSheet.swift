@@ -11,9 +11,9 @@ struct NewTimerSheet: View {
     @Environment(\.presentationMode) var presentation
     @State var startDate = Date()
     @State var name = ""
-    @Binding var list: SobrietyList
+    @Binding var list: [SobrietyEntry]
     @Binding var presented: Bool
-    init(_ list: Binding<SobrietyList>, _ presented: Binding<Bool>) {
+    init(_ list: Binding<[SobrietyEntry]>, _ presented: Binding<Bool>) {
         self._list = list
         self._presented = presented
     }
@@ -34,7 +34,7 @@ struct NewTimerSheet: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") {
                         let entry = SobrietyEntry(name: name, rings: SobrietyRings(false, startDate, false))
-                        list.entries.append(entry)
+                        list.append(entry)
                         presentation.wrappedValue.dismiss()
                     }
                 }
