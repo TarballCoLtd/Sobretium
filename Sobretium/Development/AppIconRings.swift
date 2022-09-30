@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-struct SobrietyRings: View {
-    @AppStorage("stealth") var stealth: Bool = false
-    @AppStorage("performance") var performance: Bool = false
+struct AppIconRings: View {
     @State var seconds: Float = 0
     @State var minutes: Float = 0
     @State var hours: Float = 0
@@ -43,11 +41,7 @@ struct SobrietyRings: View {
                     VStack {
                         Text(String(Int(date.daysAgo)))
                             .font(.system(size: geometry.size.width * 0.19 - 40))
-                        if stealth {
-                            Text(date.daysAgo == 1 ? "Day" : "Days")
-                        } else {
-                            Text(date.daysAgo == 1 ? "Day Sober" : "Days Sober")
-                        }
+                        Text(date.daysAgo == 1 ? "Day" : "Days")
                     }
                     .multilineTextAlignment(.center)
                     Ring(color: Color.teal, progress: $seconds, divisor: 60, type: $type, text: $secondsText, tiny: tiny)
@@ -62,7 +56,7 @@ struct SobrietyRings: View {
                         .frame(width: geometry.size.width - (Ring.lineWidth * 2.0), height: geometry.size.height - (Ring.lineWidth * 2.0))
                 }
             }
-            .shadow(radius: tiny || performance ? 0 : 15)
+            .shadow(radius: tiny ? 0 : 15)
             .frame(maxWidth: .infinity)
         }
         .onAppear {
@@ -72,61 +66,5 @@ struct SobrietyRings: View {
             days = self.date.daysAgoAlt
             months = self.date.monthsAgoAlt
         }
-        .onReceive(timer) { _ in
-            withAnimation(.linear.speed(1.0 / 3.0)) {
-                seconds = self.date.secondsAgoAlt
-                minutes = self.date.minutesAgoAlt
-                hours = self.date.hoursAgoAlt
-                days = self.date.daysAgoAlt
-                months = self.date.monthsAgoAlt
-                secondsText = "\(Int(seconds.rounded(.down))) \(seconds == 1 ? " second" : " seconds")"
-                minutesText = "\(Int(minutes.rounded(.down))) \(minutes == 1 ? " minute" : " minutes")"
-                hoursText = "\(Int(hours.rounded(.down))) \(hours == 1 ? " hour" : " hours")"
-                daysText = "\(Int(days.rounded(.down))) \(days == 1 ? " day" : " days")"
-                monthsText = "\(Int(months.rounded(.down))) \(months == 1 ? " month" : " months")"
-            }
-        }
-    }
-}
-
-extension Date {
-    var secondsAgo: Float {
-        return Float(Date().timeIntervalSince(self))
-    }
-    var minutesAgo: Float {
-        let divisor: Float = 60
-        return Float(Date().timeIntervalSince(self)) / divisor
-    }
-    var hoursAgo: Float {
-        let divisor: Float = 60 * 60
-        return Float(Date().timeIntervalSince(self)) / divisor
-    }
-    var daysAgo: Float {
-        let divisor: Float = 60 * 60 * 24
-        return Float(Date().timeIntervalSince(self)) / divisor
-    }
-    var monthsAgo: Float {
-        let divisor: Float = 60 * 60 * 24 * 31
-        return Float(Date().timeIntervalSince(self)) / divisor
-    }
-    var secondsAgoAlt: Float {
-        let diff = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: self, to: Date())
-        return Float(diff.second ?? 0)
-    }
-    var minutesAgoAlt: Float {
-        let diff = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: self, to: Date())
-        return Float(diff.minute ?? 0) + (Float(diff.second ?? 0) / 60)
-    }
-    var hoursAgoAlt: Float {
-        let diff = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: self, to: Date())
-        return Float(diff.hour ?? 0)
-    }
-    var daysAgoAlt: Float {
-        let diff = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: self, to: Date())
-        return Float(diff.day ?? 0)
-    }
-    var monthsAgoAlt: Float {
-        let diff = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: self, to: Date())
-        return Float(diff.month ?? 0)
     }
 }

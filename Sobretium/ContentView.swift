@@ -8,48 +8,83 @@ import Time
 import SwiftUI
 
 struct ContentView: View {
-    @State var date: Date = Date(timeIntervalSince1970: 1641000000)
-    @State var date2: Date = Date(timeIntervalSince1970: 1631000000)
-    @State var type: Bool = false
-    @State var isPresented: Bool = false
-    @State var list: [SobrietyEntry] = []
+    @AppStorage("stealth") var stealth: Bool = false
+    @State var addTrackerSheetPresented: Bool = false
+    @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
+    @State var deletionCandidate: IndexSet?
+    @State var deletionAlertPresented: Bool = false
+    @Environment(\.managedObjectContext) var moc
     var body: some View {
         NavigationView {
             VStack {
-                List {
-                    if list.count == 0 {
-                        Text("No Saved Trackers")
-                    }
-                    ForEach(list) { entry in
-                        NavigationLink {
-                            entry.rings
-                        } label: {
-                            Text(entry.name)
+                if entries.count == 0 {
+                    Text("No Saved Trackers")
+                        .font(.title)
+                    Text("Press the + button to get started")
+                } else {
+                    List {
+                        Section(header: Text(stealth ? "Trackers" : "Sobriety Trackers")) {
+                            ForEach(entries) { entry in
+                                NavigationLink {
+                                    SobrietyRings(false, entry.startDate!, false)
+                                } label: {
+                                    HStack {
+                                        Text(entry.name!)
+                                        Spacer()
+                                        SobrietyRings(true, entry.startDate!, false)
+                                            //.frame(maxWidth: 60, maxHeight: 60)
+                                    }
+                                }
+                            }
+                            .onDelete(perform: deleteAddiction)
                         }
                     }
-                    .onDelete(perform: deleteAddiction)
                 }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            isPresented = true
-                        } label: {
-                            Image(systemName: "plus")
-                                .resizable()
-                        }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Image(systemName: "gearshape")
+                            .resizable()
+                            .scaledToFit()
                     }
                 }
-                .sheet(isPresented: $isPresented) {
-                    NewTimerSheet($list, $isPresented)
+                ToolbarItem(placement: .principal) {
+                    Text(stealth ? "" : "Sobretium")
+                        .font(.headline)
                 }
-                List {
-                    // settings
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        addTrackerSheetPresented = true
+                    } label: {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+            }
+            .sheet(isPresented: $addTrackerSheetPresented) {
+                NewTimerSheet($addTrackerSheetPresented)
+            }
+            .alert("Are you sure you want to delete this tracker?", isPresented: $deletionAlertPresented) {
+                Button("Yes", role: .destructive) {
+                    if let deletionCandidate = deletionCandidate {
+                        for index in deletionCandidate {
+                            moc.delete(entries[index])
+                        }
+                        try? moc.save()
+                    }
+                    deletionCandidate = nil
+                    deletionAlertPresented = false
                 }
             }
         }
     }
     func deleteAddiction(at offset: IndexSet) {
-        list.remove(atOffsets: offset)
+        deletionCandidate = offset
+        deletionAlertPresented = true
     }
 }
 

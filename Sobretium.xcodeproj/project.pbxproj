@@ -7,26 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2CB48B28E742A900215648 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CB48A28E742A900215648 /* DataController.swift */; };
+		1C37802F28E7579100440E06 /* SobrietyEntry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C37802C28E7579100440E06 /* SobrietyEntry.xcdatamodeld */; };
+		1C37803228E765BD00440E06 /* AppIconRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37803128E765BD00440E06 /* AppIconRings.swift */; };
 		1C5F922528D2522300BE053D /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F922428D2522300BE053D /* RingView.swift */; };
-		1C72DAC328D1049200EDAFCF /* SobrietyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C72DAC228D1049200EDAFCF /* SobrietyList.swift */; };
 		1C91B1DF28D0F2E00062C18A /* SobretiumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */; };
 		1C91B1E128D0F2E00062C18A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91B1E028D0F2E00062C18A /* ContentView.swift */; };
 		1C91B1E328D0F2E30062C18A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C91B1E228D0F2E30062C18A /* Assets.xcassets */; };
 		1C91B1E628D0F2E30062C18A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C91B1E528D0F2E30062C18A /* Preview Assets.xcassets */; };
-		1CB334D328D2574E0073AF33 /* Time in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB334D228D2574E0073AF33 /* Time */; };
+		1C9F35EA28E60A3300C69CCB /* PathText in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F35E928E60A3300C69CCB /* PathText */; };
+		1C9F35ED28E60A6300C69CCB /* Time in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F35EC28E60A6300C69CCB /* Time */; };
+		1C9F35F028E6144000C69CCB /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F35EF28E6144000C69CCB /* AboutView.swift */; };
+		1CE8FC7328D3965800940E07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8FC7228D3965800940E07 /* SettingsView.swift */; };
 		1CF24EB828D0F35C000E75A5 /* NewTimerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */; };
 		1CF24EB928D0F35C000E75A5 /* SobrietyRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */; };
 		1CF24EBA28D0F35C000E75A5 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB628D0F35C000E75A5 /* Ring.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C2CB48A28E742A900215648 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		1C37802D28E7579100440E06 /* SobrietyEntry.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SobrietyEntry.xcdatamodel; sourceTree = "<group>"; };
+		1C37802E28E7579100440E06 /* SobrietyEntries.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SobrietyEntries.xcdatamodel; sourceTree = "<group>"; };
+		1C37803128E765BD00440E06 /* AppIconRings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconRings.swift; sourceTree = "<group>"; };
 		1C5F922428D2522300BE053D /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
-		1C72DAC228D1049200EDAFCF /* SobrietyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobrietyList.swift; sourceTree = "<group>"; };
 		1C91B1DB28D0F2E00062C18A /* Sobretium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sobretium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobretiumApp.swift; sourceTree = "<group>"; };
 		1C91B1E028D0F2E00062C18A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1C91B1E228D0F2E30062C18A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C91B1E528D0F2E30062C18A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1C9F35EF28E6144000C69CCB /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		1CE8FC7228D3965800940E07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTimerSheet.swift; sourceTree = "<group>"; };
 		1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobrietyRings.swift; sourceTree = "<group>"; };
 		1CF24EB628D0F35C000E75A5 /* Ring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
@@ -37,13 +47,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CB334D328D2574E0073AF33 /* Time in Frameworks */,
+				1C9F35EA28E60A3300C69CCB /* PathText in Frameworks */,
+				1C9F35ED28E60A6300C69CCB /* Time in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C37803028E765B300440E06 /* Development */ = {
+			isa = PBXGroup;
+			children = (
+				1C37803128E765BD00440E06 /* AppIconRings.swift */,
+			);
+			path = Development;
+			sourceTree = "<group>";
+		};
 		1C91B1D228D0F2E00062C18A = {
 			isa = PBXGroup;
 			children = (
@@ -63,13 +82,16 @@
 		1C91B1DD28D0F2E00062C18A /* Sobretium */ = {
 			isa = PBXGroup;
 			children = (
+				1C37803028E765B300440E06 /* Development */,
+				1C9F35EE28E6142D00C69CCB /* Settings */,
 				1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */,
 				1C91B1E028D0F2E00062C18A /* ContentView.swift */,
 				1C5F922428D2522300BE053D /* RingView.swift */,
-				1C72DAC228D1049200EDAFCF /* SobrietyList.swift */,
 				1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */,
 				1CF24EB628D0F35C000E75A5 /* Ring.swift */,
 				1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */,
+				1C2CB48A28E742A900215648 /* DataController.swift */,
+				1C37802C28E7579100440E06 /* SobrietyEntry.xcdatamodeld */,
 				1C91B1E228D0F2E30062C18A /* Assets.xcassets */,
 				1C91B1E428D0F2E30062C18A /* Preview Content */,
 			);
@@ -82,6 +104,15 @@
 				1C91B1E528D0F2E30062C18A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1C9F35EE28E6142D00C69CCB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1CE8FC7228D3965800940E07 /* SettingsView.swift */,
+				1C9F35EF28E6144000C69CCB /* AboutView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,7 +132,8 @@
 			);
 			name = Sobretium;
 			packageProductDependencies = (
-				1CB334D228D2574E0073AF33 /* Time */,
+				1C9F35E928E60A3300C69CCB /* PathText */,
+				1C9F35EC28E60A6300C69CCB /* Time */,
 			);
 			productName = Sobretium;
 			productReference = 1C91B1DB28D0F2E00062C18A /* Sobretium.app */;
@@ -132,8 +164,8 @@
 			);
 			mainGroup = 1C91B1D228D0F2E00062C18A;
 			packageReferences = (
-				1CB334D128D2574E0073AF33 /* XCRemoteSwiftPackageReference "time" */,
-				1C9579C728D2589A00DF9717 /* XCRemoteSwiftPackageReference "CurvyText" */,
+				1C9F35E828E60A3300C69CCB /* XCRemoteSwiftPackageReference "CurvyText" */,
+				1C9F35EB28E60A6300C69CCB /* XCRemoteSwiftPackageReference "time" */,
 			);
 			productRefGroup = 1C91B1DC28D0F2E00062C18A /* Products */;
 			projectDirPath = "";
@@ -162,11 +194,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CF24EBA28D0F35C000E75A5 /* Ring.swift in Sources */,
+				1CE8FC7328D3965800940E07 /* SettingsView.swift in Sources */,
 				1C91B1E128D0F2E00062C18A /* ContentView.swift in Sources */,
 				1CF24EB828D0F35C000E75A5 /* NewTimerSheet.swift in Sources */,
+				1C9F35F028E6144000C69CCB /* AboutView.swift in Sources */,
+				1C2CB48B28E742A900215648 /* DataController.swift in Sources */,
 				1CF24EB928D0F35C000E75A5 /* SobrietyRings.swift in Sources */,
+				1C37803228E765BD00440E06 /* AppIconRings.swift in Sources */,
+				1C37802F28E7579100440E06 /* SobrietyEntry.xcdatamodeld in Sources */,
 				1C5F922528D2522300BE053D /* RingView.swift in Sources */,
-				1C72DAC328D1049200EDAFCF /* SobrietyList.swift in Sources */,
 				1C91B1DF28D0F2E00062C18A /* SobretiumApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,7 +260,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -278,7 +314,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -299,11 +335,12 @@
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +348,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -328,11 +368,12 @@
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,6 +381,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -370,7 +414,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1C9579C728D2589A00DF9717 /* XCRemoteSwiftPackageReference "CurvyText" */ = {
+		1C9F35E828E60A3300C69CCB /* XCRemoteSwiftPackageReference "CurvyText" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alyxferrari/CurvyText";
 			requirement = {
@@ -378,7 +422,7 @@
 				kind = branch;
 			};
 		};
-		1CB334D128D2574E0073AF33 /* XCRemoteSwiftPackageReference "time" */ = {
+		1C9F35EB28E60A6300C69CCB /* XCRemoteSwiftPackageReference "time" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/davedelong/time";
 			requirement = {
@@ -389,12 +433,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1CB334D228D2574E0073AF33 /* Time */ = {
+		1C9F35E928E60A3300C69CCB /* PathText */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1CB334D128D2574E0073AF33 /* XCRemoteSwiftPackageReference "time" */;
+			package = 1C9F35E828E60A3300C69CCB /* XCRemoteSwiftPackageReference "CurvyText" */;
+			productName = PathText;
+		};
+		1C9F35EC28E60A6300C69CCB /* Time */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C9F35EB28E60A6300C69CCB /* XCRemoteSwiftPackageReference "time" */;
 			productName = Time;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		1C37802C28E7579100440E06 /* SobrietyEntry.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1C37802D28E7579100440E06 /* SobrietyEntry.xcdatamodel */,
+				1C37802E28E7579100440E06 /* SobrietyEntries.xcdatamodel */,
+			);
+			currentVersion = 1C37802D28E7579100440E06 /* SobrietyEntry.xcdatamodel */;
+			path = SobrietyEntry.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1C91B1D328D0F2E00062C18A /* Project object */;
 }

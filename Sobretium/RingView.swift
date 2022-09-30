@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct RingView: View {
-    @State var rings: SobrietyEntry
+    @State var entry: SobrietyEntry
+    init(_ entry: SobrietyEntry) {
+        self.entry = entry
+    }
     var body: some View {
-        ScrollView {
+        VStack {
             
         }
     }

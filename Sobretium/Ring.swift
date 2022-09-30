@@ -9,6 +9,7 @@ import SwiftUI
 import PathText
 
 struct Ring: View {
+    @AppStorage("performance") var performance: Bool = false
     public static let lineWidth: CGFloat = 20.0
     public static let tinyLineWidth: CGFloat = 3.0
     @State var color: Color?
@@ -38,14 +39,14 @@ struct Ring: View {
                         .stroke(style: StrokeStyle(lineWidth: tiny ? Ring.tinyLineWidth : Ring.lineWidth, lineCap: .round))
                         .foregroundColor(color)
                         .rotationEffect(.degrees(270.0 - (Double(progress / divisor) * 180.0)))
-                        .shadow(radius: 15)
+                        .shadow(radius: tiny || performance ? 0 : 15)
                 } else {
                     Circle()
                         .trim(from: 0.0, to: CGFloat(progress / divisor))
                         .stroke(style: StrokeStyle(lineWidth: tiny ? Ring.tinyLineWidth : Ring.lineWidth, lineCap: .round))
                         .foregroundColor(color)
-                        .rotationEffect(Angle(degrees: 270.0))
-                        .shadow(radius: 15)
+                        .rotationEffect(.degrees(270.0))
+                        .shadow(radius: tiny || performance ? 0 : 15)
                 }
                 if !tiny {
                     PathText(text: text(text), path: Path() {$0.addArc(center: CGPoint(x: geometry.frame(in: .local).midX, y: geometry.frame(in: .local).midY), radius: (geometry.size.width / 2) - 9, startAngle: .degrees(-90), endAngle: .degrees(180), clockwise: false)})
