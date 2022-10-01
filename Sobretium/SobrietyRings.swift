@@ -66,26 +66,25 @@ struct SobrietyRings: View {
             .frame(maxWidth: .infinity)
         }
         .onAppear {
-            seconds = self.date.secondsAgoAlt
-            minutes = self.date.minutesAgoAlt
-            hours = self.date.hoursAgoAlt
-            days = self.date.daysAgoAlt
-            months = self.date.monthsAgoAlt
+            update()
         }
         .onReceive(timer) { _ in
-            withAnimation(.linear.speed(1.0 / 3.0)) {
-                seconds = self.date.secondsAgoAlt
-                minutes = self.date.minutesAgoAlt
-                hours = self.date.hoursAgoAlt
-                days = self.date.daysAgoAlt
-                months = self.date.monthsAgoAlt
-                secondsText = "\(Int(seconds.rounded(.down))) \(seconds == 1 ? " second" : " seconds")"
-                minutesText = "\(Int(minutes.rounded(.down))) \(minutes == 1 ? " minute" : " minutes")"
-                hoursText = "\(Int(hours.rounded(.down))) \(hours == 1 ? " hour" : " hours")"
-                daysText = "\(Int(days.rounded(.down))) \(days == 1 ? " day" : " days")"
-                monthsText = "\(Int(months.rounded(.down))) \(months == 1 ? " month" : " months")"
+            withAnimation(.easeInOut) {
+                update()
             }
         }
+    }
+    func update() {
+        seconds = self.date.secondsAgoAlt
+        minutes = self.date.minutesAgoAlt
+        hours = self.date.hoursAgoAlt
+        days = self.date.daysAgoAlt
+        months = self.date.monthsAgoAlt
+        secondsText = "\(Int(seconds.rounded(.down))) \(seconds == 1 ? " second" : " seconds")"
+        minutesText = "\(Int(minutes.rounded(.down))) \(minutes == 1 ? " minute" : " minutes")"
+        hoursText = "\(Int(hours.rounded(.down))) \(hours == 1 ? " hour" : " hours")"
+        daysText = "\(Int(days.rounded(.down))) \(days == 1 ? " day" : " days")"
+        monthsText = "\(Int(months.rounded(.down))) \(months == 1 ? " month" : " months")"
     }
 }
 

@@ -12,11 +12,13 @@ struct AboutView: View {
     var body: some View {
         VStack {
             Text("Sobretium")
-                .font(.title)
+                .font(.largeTitle)
+            Text("[so-BREE-shee-um]")
+                .font(.subheadline)
             Text("by Alyx Ferrari")
                 .font(.subheadline)
             Text("")
-            Text("Version 0.1 build 1")
+            Text("Version 0.2.1 build 8")
             Spacer()
         }
     }

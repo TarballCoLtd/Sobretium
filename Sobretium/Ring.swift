@@ -49,7 +49,7 @@ struct Ring: View {
                         .shadow(radius: tiny || performance ? 0 : 15)
                 }
                 if !tiny {
-                    PathText(text: text(text), path: Path() {$0.addArc(center: CGPoint(x: geometry.frame(in: .local).midX, y: geometry.frame(in: .local).midY), radius: (geometry.size.width / 2) - 9, startAngle: .degrees(-90), endAngle: .degrees(180), clockwise: false)})
+                    PathText(text: text(text), path: Path() {$0.addArc(center: CGPoint(x: geometry.frame(in: .local).midX, y: geometry.frame(in: .local).midY), radius: (geometry.size.width / 2) - 5, startAngle: .degrees(-91), endAngle: .degrees(180), clockwise: false)})
                 }
             }
         }

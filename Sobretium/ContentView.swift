@@ -4,92 +4,117 @@
 //
 //  Created by Alyx Ferrari on 4/27/22.
 //
-import Time
+
 import SwiftUI
+import LocalAuthentication
 
 struct ContentView: View {
     @AppStorage("stealth") var stealth: Bool = false
+    @AppStorage("biometry") var biometry: Bool = false
     @State var addTrackerSheetPresented: Bool = false
     @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
     @State var deletionCandidate: IndexSet?
     @State var deletionAlertPresented: Bool = false
     @Environment(\.managedObjectContext) var moc
+    @State var authenticated: Bool = false
     var body: some View {
         NavigationView {
-            VStack {
-                if entries.count == 0 {
-                    Text("No Saved Trackers")
-                        .font(.title)
-                    Text("Press the + button to get started")
-                } else {
-                    List {
-                        Section(header: Text(stealth ? "Trackers" : "Sobriety Trackers")) {
-                            ForEach(entries) { entry in
-                                NavigationLink {
-                                    SobrietyRings(false, entry.startDate!, false)
-                                } label: {
-                                    HStack {
-                                        Text(entry.name!)
-                                        Spacer()
-                                        SobrietyRings(true, entry.startDate!, false)
-                                            //.frame(maxWidth: 60, maxHeight: 60)
+            if authenticated {
+                VStack {
+                    if entries.count == 0 {
+                        Text("No Saved Trackers")
+                            .font(.title)
+                        Text("Press the + button to get started")
+                    } else {
+                        List {
+                            Section(header: Text(stealth ? "Trackers" : "Sobriety Trackers")) {
+                                ForEach(entries) { entry in
+                                    if let startDate = entry.startDate, let name = entry.name {
+                                        NavigationLink {
+                                            SobrietyRings(false, startDate, false)
+                                        } label: {
+                                            Text(name)
+                                        }
                                     }
                                 }
+                                .onDelete(perform: deleteAddiction)
                             }
-                            .onDelete(perform: deleteAddiction)
                         }
                     }
                 }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink {
-                        SettingsView()
-                    } label: {
-                        Image(systemName: "gearshape")
-                            .resizable()
-                            .scaledToFit()
-                    }
-                }
-                ToolbarItem(placement: .principal) {
-                    Text(stealth ? "" : "Sobretium")
-                        .font(.headline)
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        addTrackerSheetPresented = true
-                    } label: {
-                        Image(systemName: "plus")
-                            .resizable()
-                            .scaledToFit()
-                    }
-                }
-            }
-            .sheet(isPresented: $addTrackerSheetPresented) {
-                NewTimerSheet($addTrackerSheetPresented)
-            }
-            .alert("Are you sure you want to delete this tracker?", isPresented: $deletionAlertPresented) {
-                Button("Yes", role: .destructive) {
-                    if let deletionCandidate = deletionCandidate {
-                        for index in deletionCandidate {
-                            moc.delete(entries[index])
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        NavigationLink {
+                            SettingsView()
+                        } label: {
+                            Image(systemName: "gearshape")
+                                .resizable()
+                                .scaledToFit()
                         }
-                        try? moc.save()
                     }
-                    deletionCandidate = nil
-                    deletionAlertPresented = false
+                    ToolbarItem(placement: .principal) {
+                        Text(stealth ? "" : "Sobretium")
+                            .font(.headline)
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            addTrackerSheetPresented = true
+                        } label: {
+                            Image(systemName: "plus")
+                                .resizable()
+                                .scaledToFit()
+                        }
+                    }
+                }
+                .sheet(isPresented: $addTrackerSheetPresented) {
+                    NewTimerSheet($addTrackerSheetPresented)
+                }
+                .alert("Are you sure you want to delete this tracker?", isPresented: $deletionAlertPresented) {
+                    Button("Yes", role: .destructive) {
+                        if let deletionCandidate = deletionCandidate {
+                            for index in deletionCandidate {
+                                moc.delete(entries[index])
+                            }
+                            try? moc.save()
+                        }
+                        deletionCandidate = nil
+                        deletionAlertPresented = false
+                    }
                 }
             }
+        }
+        .onAppear(perform: authenticate)
+    }
+    func authenticate() {
+        if !biometry {
+            withAnimation {
+                authenticated = true
+            }
+            return
+        }
+        let context = LAContext()
+        var error: NSError?
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "Touch ID access is needed for biometric authentication."
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+                if success {
+                    withAnimation {
+                        authenticated = true
+                    }
+                } else {
+                    authenticate() // TODO: replace with PIN code
+                }
+            }
+        } else {
+            biometry = false
+            authenticated = true
+        }
+        if let error = error {
+            print(error)
         }
     }
     func deleteAddiction(at offset: IndexSet) {
         deletionCandidate = offset
         deletionAlertPresented = true
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
