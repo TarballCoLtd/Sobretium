@@ -18,6 +18,7 @@
 		1C9F35EA28E60A3300C69CCB /* PathText in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F35E928E60A3300C69CCB /* PathText */; };
 		1C9F35ED28E60A6300C69CCB /* Time in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F35EC28E60A6300C69CCB /* Time */; };
 		1C9F35F028E6144000C69CCB /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F35EF28E6144000C69CCB /* AboutView.swift */; };
+		1CA7E18E28E8C9BB005E68A0 /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7E18D28E8C9BB005E68A0 /* IntroductionView.swift */; };
 		1CE8FC7328D3965800940E07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8FC7228D3965800940E07 /* SettingsView.swift */; };
 		1CF24EB828D0F35C000E75A5 /* NewTimerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */; };
 		1CF24EB928D0F35C000E75A5 /* SobrietyRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */; };
@@ -36,6 +37,7 @@
 		1C91B1E228D0F2E30062C18A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C91B1E528D0F2E30062C18A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1C9F35EF28E6144000C69CCB /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		1CA7E18D28E8C9BB005E68A0 /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
 		1CE8FC7228D3965800940E07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTimerSheet.swift; sourceTree = "<group>"; };
 		1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobrietyRings.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 		1C91B1DD28D0F2E00062C18A /* Sobretium */ = {
 			isa = PBXGroup;
 			children = (
+				1CA7E18C28E8C984005E68A0 /* Tutorial */,
 				1C37803028E765B300440E06 /* Development */,
 				1C9F35EE28E6142D00C69CCB /* Settings */,
 				1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */,
@@ -113,6 +116,14 @@
 				1C9F35EF28E6144000C69CCB /* AboutView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		1CA7E18C28E8C984005E68A0 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				1CA7E18D28E8C9BB005E68A0 /* IntroductionView.swift */,
+			);
+			path = Tutorial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 				1C37803228E765BD00440E06 /* AppIconRings.swift in Sources */,
 				1C37802F28E7579100440E06 /* SobrietyEntry.xcdatamodeld in Sources */,
 				1C5F922528D2522300BE053D /* RingView.swift in Sources */,
+				1CA7E18E28E8C9BB005E68A0 /* IntroductionView.swift in Sources */,
 				1C91B1DF28D0F2E00062C18A /* SobretiumApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

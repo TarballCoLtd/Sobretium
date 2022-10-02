@@ -107,7 +107,9 @@ struct ContentView: View {
             }
         } else {
             biometry = false
-            authenticated = true
+            withAnimation {
+                authenticated = true
+            }
         }
         if let error = error {
             print(error)
