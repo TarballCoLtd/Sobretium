@@ -2,7 +2,7 @@
 //  AboutView.swift
 //  Sobretium
 //
-//  Created by Alyx Ferrari on 9/29/22.
+//  Created by Tarball on 9/29/22.
 //
 
 import SwiftUI
@@ -18,8 +18,14 @@ struct AboutView: View {
             Text("by Alyx Ferrari")
                 .font(.subheadline)
             Text("")
-            Text("Version 0.2.1 build 8")
+            Text("Version 0.2.1 build 29")
             Spacer()
+        }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("About")
+                    .fixedSize(horizontal: true, vertical: false)
+            }
         }
     }
 }

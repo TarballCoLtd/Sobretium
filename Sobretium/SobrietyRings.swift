@@ -2,7 +2,7 @@
 //  FitnessRings.swift
 //  FitnessRingsDemo
 //
-//  Created by Alyx Ferrari on 4/27/22.
+//  Created by Tarball on 4/27/22.
 //
 
 import SwiftUI
@@ -43,11 +43,7 @@ struct SobrietyRings: View {
                     VStack {
                         Text(String(Int(date.daysAgo)))
                             .font(.system(size: geometry.size.width * 0.19 - 40))
-                        if stealth {
-                            Text(date.daysAgo == 1 ? "Day" : "Days")
-                        } else {
-                            Text(date.daysAgo == 1 ? "Day Sober" : "Days Sober")
-                        }
+                        Text(date.daysAgo == 1 ? "Day" : "Days")
                     }
                     .multilineTextAlignment(.center)
                     Ring(color: Color.teal, progress: $seconds, divisor: 60, type: $type, text: $secondsText, tiny: tiny)

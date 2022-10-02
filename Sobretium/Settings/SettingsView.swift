@@ -2,7 +2,7 @@
 //  SettingsView.swift
 //  Sobretium
 //
-//  Created by Alyx Ferrari on 9/15/22.
+//  Created by Tarball on 9/15/22.
 //
 
 import SwiftUI
@@ -37,6 +37,7 @@ struct SettingsView: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text("Settings")
+                    .fixedSize(horizontal: true, vertical: false)
                     .font(.headline)
             }
         }

@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Sobretium
 //
-//  Created by Alyx Ferrari on 4/27/22.
+//  Created by Tarball on 4/27/22.
 //
 
 import SwiftUI
@@ -13,7 +13,7 @@ struct ContentView: View {
     @AppStorage("biometry") var biometry: Bool = false
     @State var addTrackerSheetPresented: Bool = false
     @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
-    @State var deletionCandidate: IndexSet?
+    @State var deletionCandidate: SobrietyEntry?
     @State var deletionAlertPresented: Bool = false
     @Environment(\.managedObjectContext) var moc
     @State var authenticated: Bool = false
@@ -29,15 +29,23 @@ struct ContentView: View {
                         List {
                             Section(header: Text(stealth ? "Trackers" : "Sobriety Trackers")) {
                                 ForEach(entries) { entry in
-                                    if let startDate = entry.startDate, let name = entry.name {
+                                    if entry.startDate != nil && entry.name != nil {
                                         NavigationLink {
-                                            SobrietyRings(false, startDate, false)
+                                            RingView(entry)
                                         } label: {
-                                            Text(name)
+                                            Text(entry.name!)
+                                        }
+                                        .swipeActions {
+                                            Button {
+                                                
+                                            } label: {
+                                                Image(systemName: "trash")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                            }
                                         }
                                     }
                                 }
-                                .onDelete(perform: deleteAddiction)
                             }
                         }
                     }
@@ -54,6 +62,7 @@ struct ContentView: View {
                     }
                     ToolbarItem(placement: .principal) {
                         Text(stealth ? "" : "Sobretium")
+                            .fixedSize(horizontal: true, vertical: false)
                             .font(.headline)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -67,14 +76,13 @@ struct ContentView: View {
                     }
                 }
                 .sheet(isPresented: $addTrackerSheetPresented) {
-                    NewTimerSheet($addTrackerSheetPresented)
+                    NewTimerSheet()
                 }
                 .alert("Are you sure you want to delete this tracker?", isPresented: $deletionAlertPresented) {
+                    Button("Cancel", role: .cancel) {}
                     Button("Yes", role: .destructive) {
                         if let deletionCandidate = deletionCandidate {
-                            for index in deletionCandidate {
-                                moc.delete(entries[index])
-                            }
+                            moc.delete(deletionCandidate)
                             try? moc.save()
                         }
                         deletionCandidate = nil
@@ -115,8 +123,8 @@ struct ContentView: View {
             print(error)
         }
     }
-    func deleteAddiction(at offset: IndexSet) {
-        deletionCandidate = offset
+    func deleteAddiction(addiction: SobrietyEntry) {
+        deletionCandidate = addiction
         deletionAlertPresented = true
     }
 }

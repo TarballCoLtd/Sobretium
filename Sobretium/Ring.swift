@@ -2,7 +2,7 @@
 //  Rings.swift
 //  FitnessRingsDemo
 //
-//  Created by Alyx Ferrari on 4/27/22.
+//  Created by Tarball on 4/27/22.
 //
 
 import SwiftUI

@@ -2,7 +2,7 @@
 //  NewTimerSheet.swift
 //  Sobretium
 //
-//  Created by Alyx Ferrari on 5/19/22.
+//  Created by Tarball on 5/19/22.
 //
 
 import SwiftUI
@@ -14,16 +14,10 @@ struct NewTimerSheet: View {
     @State var startDate = Date()
     @State var name = ""
     @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
-    @Binding var presented: Bool
-    init(_ presented: Binding<Bool>) {
-        self._presented = presented
-    }
     var body: some View {
         NavigationView {
             List {
-                HStack {
-                    DatePicker("Start Date", selection: $startDate, displayedComponents: [.date, .hourAndMinute])
-                }
+                DatePicker("Start Date", selection: $startDate, displayedComponents: [.date, .hourAndMinute])
                 TextField(stealth ? "Tracker name" : "Addiction name", text: $name)
             }
             .toolbar {
@@ -34,6 +28,7 @@ struct NewTimerSheet: View {
                 }
                 ToolbarItem(placement: .principal) {
                     Text(stealth ? "Add Tracker" : "Add Sobriety Tracker")
+                        .fixedSize(horizontal: true, vertical: false)
                         .font(.headline)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {

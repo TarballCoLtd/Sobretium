@@ -18,7 +18,7 @@
 		1C9F35EA28E60A3300C69CCB /* PathText in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F35E928E60A3300C69CCB /* PathText */; };
 		1C9F35ED28E60A6300C69CCB /* Time in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F35EC28E60A6300C69CCB /* Time */; };
 		1C9F35F028E6144000C69CCB /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F35EF28E6144000C69CCB /* AboutView.swift */; };
-		1CA7E18E28E8C9BB005E68A0 /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7E18D28E8C9BB005E68A0 /* IntroductionView.swift */; };
+		1CA7E19028EA15C2005E68A0 /* EditTrackerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7E18F28EA15C2005E68A0 /* EditTrackerSheet.swift */; };
 		1CE8FC7328D3965800940E07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8FC7228D3965800940E07 /* SettingsView.swift */; };
 		1CF24EB828D0F35C000E75A5 /* NewTimerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */; };
 		1CF24EB928D0F35C000E75A5 /* SobrietyRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */; };
@@ -37,7 +37,7 @@
 		1C91B1E228D0F2E30062C18A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C91B1E528D0F2E30062C18A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1C9F35EF28E6144000C69CCB /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		1CA7E18D28E8C9BB005E68A0 /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
+		1CA7E18F28EA15C2005E68A0 /* EditTrackerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTrackerSheet.swift; sourceTree = "<group>"; };
 		1CE8FC7228D3965800940E07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTimerSheet.swift; sourceTree = "<group>"; };
 		1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobrietyRings.swift; sourceTree = "<group>"; };
@@ -84,13 +84,12 @@
 		1C91B1DD28D0F2E00062C18A /* Sobretium */ = {
 			isa = PBXGroup;
 			children = (
-				1CA7E18C28E8C984005E68A0 /* Tutorial */,
+				1CA7E19128EA15CC005E68A0 /* Sheets */,
 				1C37803028E765B300440E06 /* Development */,
 				1C9F35EE28E6142D00C69CCB /* Settings */,
 				1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */,
 				1C91B1E028D0F2E00062C18A /* ContentView.swift */,
 				1C5F922428D2522300BE053D /* RingView.swift */,
-				1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */,
 				1CF24EB628D0F35C000E75A5 /* Ring.swift */,
 				1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */,
 				1C2CB48A28E742A900215648 /* DataController.swift */,
@@ -118,12 +117,13 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		1CA7E18C28E8C984005E68A0 /* Tutorial */ = {
+		1CA7E19128EA15CC005E68A0 /* Sheets */ = {
 			isa = PBXGroup;
 			children = (
-				1CA7E18D28E8C9BB005E68A0 /* IntroductionView.swift */,
+				1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */,
+				1CA7E18F28EA15C2005E68A0 /* EditTrackerSheet.swift */,
 			);
-			path = Tutorial;
+			path = Sheets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,9 +212,9 @@
 				1C2CB48B28E742A900215648 /* DataController.swift in Sources */,
 				1CF24EB928D0F35C000E75A5 /* SobrietyRings.swift in Sources */,
 				1C37803228E765BD00440E06 /* AppIconRings.swift in Sources */,
+				1CA7E19028EA15C2005E68A0 /* EditTrackerSheet.swift in Sources */,
 				1C37802F28E7579100440E06 /* SobrietyEntry.xcdatamodeld in Sources */,
 				1C5F922528D2522300BE053D /* RingView.swift in Sources */,
-				1CA7E18E28E8C9BB005E68A0 /* IntroductionView.swift in Sources */,
 				1C91B1DF28D0F2E00062C18A /* SobretiumApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,23 +342,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Sobretium;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID access is needed for biometric authentication.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -376,23 +376,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Sobretium;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID access is needed for biometric authentication.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
