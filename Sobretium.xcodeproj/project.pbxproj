@@ -19,6 +19,7 @@
 		1C9F35ED28E60A6300C69CCB /* Time in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F35EC28E60A6300C69CCB /* Time */; };
 		1C9F35F028E6144000C69CCB /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F35EF28E6144000C69CCB /* AboutView.swift */; };
 		1CA7E19028EA15C2005E68A0 /* EditTrackerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7E18F28EA15C2005E68A0 /* EditTrackerSheet.swift */; };
+		1CB54DC228EA6E0900CDE2A4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB54DC128EA6E0900CDE2A4 /* Theme.swift */; };
 		1CE8FC7328D3965800940E07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8FC7228D3965800940E07 /* SettingsView.swift */; };
 		1CF24EB828D0F35C000E75A5 /* NewTimerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */; };
 		1CF24EB928D0F35C000E75A5 /* SobrietyRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */; };
@@ -38,6 +39,7 @@
 		1C91B1E528D0F2E30062C18A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1C9F35EF28E6144000C69CCB /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		1CA7E18F28EA15C2005E68A0 /* EditTrackerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTrackerSheet.swift; sourceTree = "<group>"; };
+		1CB54DC128EA6E0900CDE2A4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		1CE8FC7228D3965800940E07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTimerSheet.swift; sourceTree = "<group>"; };
 		1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobrietyRings.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				1CF24EB628D0F35C000E75A5 /* Ring.swift */,
 				1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */,
 				1C2CB48A28E742A900215648 /* DataController.swift */,
+				1CB54DC128EA6E0900CDE2A4 /* Theme.swift */,
 				1C37802C28E7579100440E06 /* SobrietyEntry.xcdatamodeld */,
 				1C91B1E228D0F2E30062C18A /* Assets.xcassets */,
 				1C91B1E428D0F2E30062C18A /* Preview Content */,
@@ -208,6 +211,7 @@
 				1CE8FC7328D3965800940E07 /* SettingsView.swift in Sources */,
 				1C91B1E128D0F2E00062C18A /* ContentView.swift in Sources */,
 				1CF24EB828D0F35C000E75A5 /* NewTimerSheet.swift in Sources */,
+				1CB54DC228EA6E0900CDE2A4 /* Theme.swift in Sources */,
 				1C9F35F028E6144000C69CCB /* AboutView.swift in Sources */,
 				1C2CB48B28E742A900215648 /* DataController.swift in Sources */,
 				1CF24EB928D0F35C000E75A5 /* SobrietyRings.swift in Sources */,
@@ -342,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -358,7 +362,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3;
+				MARKETING_VERSION = 0.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -376,7 +380,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -392,7 +396,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3;
+				MARKETING_VERSION = 0.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

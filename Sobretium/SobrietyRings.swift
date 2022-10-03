@@ -21,12 +21,12 @@ struct SobrietyRings: View {
     @State var daysText: String = ""
     @State var monthsText: String = ""
     @State var tiny: Bool = false
-    @State var date: Date
+    @State var entry: SobrietyEntry
     @State var type: Bool
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    init(_ tiny: Bool, _ date: Date, _ type: Bool) {
+    init(_ tiny: Bool, _ entry: SobrietyEntry, _ type: Bool) {
         self._tiny = State(initialValue: tiny)
-        self._date = State(initialValue: date)
+        self._entry = State(initialValue: entry)
         self._type = State(initialValue: type)
     }
     var body: some View {
@@ -41,9 +41,9 @@ struct SobrietyRings: View {
                         .frame(width: geometry.size.width - (Ring.tinyLineWidth * 2.0), height: geometry.size.height - (Ring.tinyLineWidth * 2.0))
                 } else {
                     VStack {
-                        Text(String(Int(date.daysAgo)))
+                        Text(String(Int(entry.startDate!.daysAgo)))
                             .font(.system(size: geometry.size.width * 0.19 - 40))
-                        Text(date.daysAgo == 1 ? "Day" : "Days")
+                        Text(entry.startDate!.daysAgo == 1 ? "Day" : "Days")
                     }
                     .multilineTextAlignment(.center)
                     Ring(color: Color.teal, progress: $seconds, divisor: 60, type: $type, text: $secondsText, tiny: tiny)
@@ -71,11 +71,11 @@ struct SobrietyRings: View {
         }
     }
     func update() {
-        seconds = self.date.secondsAgoAlt
-        minutes = self.date.minutesAgoAlt
-        hours = self.date.hoursAgoAlt
-        days = self.date.daysAgoAlt
-        months = self.date.monthsAgoAlt
+        seconds = self.entry.startDate!.secondsAgoAlt
+        minutes = self.entry.startDate!.minutesAgoAlt
+        hours = self.entry.startDate!.hoursAgoAlt
+        days = self.entry.startDate!.daysAgoAlt
+        months = self.entry.startDate!.monthsAgoAlt
         secondsText = "\(Int(seconds.rounded(.down))) \(seconds == 1 ? " second" : " seconds")"
         minutesText = "\(Int(minutes.rounded(.down))) \(minutes == 1 ? " minute" : " minutes")"
         hoursText = "\(Int(hours.rounded(.down))) \(hours == 1 ? " hour" : " hours")"

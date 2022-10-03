@@ -12,6 +12,7 @@ struct ContentView: View {
     @AppStorage("stealth") var stealth: Bool = false
     @AppStorage("biometry") var biometry: Bool = false
     @State var addTrackerSheetPresented: Bool = false
+    @State var editTrackerSheetPresented: Bool = false
     @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
     @State var deletionCandidate: SobrietyEntry?
     @State var deletionAlertPresented: Bool = false
@@ -37,12 +38,25 @@ struct ContentView: View {
                                         }
                                         .swipeActions {
                                             Button {
-                                                
+                                                deleteAddiction(entry)
                                             } label: {
                                                 Image(systemName: "trash")
                                                     .resizable()
                                                     .scaledToFit()
                                             }
+                                            .tint(.red)
+                                            Button {
+                                                print("fart")
+                                                editTrackerSheetPresented = true
+                                            } label: {
+                                                Image(systemName: "square.and.pencil")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                            }
+                                            .tint(.yellow)
+                                        }
+                                        .sheet(isPresented: $editTrackerSheetPresented) {
+                                            EditTrackerSheet(entry)
                                         }
                                     }
                                 }
@@ -123,7 +137,7 @@ struct ContentView: View {
             print(error)
         }
     }
-    func deleteAddiction(addiction: SobrietyEntry) {
+    func deleteAddiction(_ addiction: SobrietyEntry) {
         deletionCandidate = addiction
         deletionAlertPresented = true
     }
