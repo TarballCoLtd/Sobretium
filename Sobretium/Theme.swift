@@ -7,14 +7,28 @@
 
 import SwiftUI
 
-class Theme {
+class Theme: Identifiable, Equatable {
     public static let themes: [Theme] = [
         Theme(
             Color.teal, Color.red, Color.purple, Color.pink, Color.orange,
-            Color.black, Color.black, Color.black, Color.black, Color.black,
+            Color.white, Color.white, Color.white, Color.white, Color.white,
             "Sobretium"
         ),
+        Theme(
+            Color(0xfffeed), Color(0xcdd873), Color(0xd03b3b), Color(0x901a1a), Color(0x28543c),
+            Color.black, Color.black, Color.black, Color.white, Color.white,
+            "Christmas"
+        ),
+        Theme(
+            Color.teal, Color.pink, Color.white, Color.pink, Color.teal,
+            Color.black, Color.black, Color.black, Color.white, Color.white,
+            "Trans Pride"
+        ),
     ]
+    
+    static func == (lhs: Theme, rhs: Theme) -> Bool {
+        return lhs.name == rhs.name
+    }
     
     public var color1: Color
     public var color2: Color
@@ -39,5 +53,17 @@ class Theme {
         self.textColor4 = textColor4
         self.textColor5 = textColor5
         self.name = name
+    }
+}
+
+extension Color {
+    init(_ hex: UInt) { // yeah yeah, there's inconsistent whitespace - i normally hate it too but i thought it looked nice here
+        self.init(
+            .sRGB,
+            red:   Double((hex >> 16) & 0xff) / 255,
+            green: Double((hex >> 08) & 0xff) / 255,
+            blue:  Double((hex >> 00) & 0xff) / 255,
+            opacity: 255
+        )
     }
 }

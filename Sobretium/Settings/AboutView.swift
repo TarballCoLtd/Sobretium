@@ -18,7 +18,7 @@ struct AboutView: View {
             Text("by Alyx Ferrari")
                 .font(.subheadline)
             Text("")
-            Text("Version 0.2.1 build 29")
+            Text("Version 0.4 build 65")
             Spacer()
         }
         .toolbar {
@@ -27,11 +27,5 @@ struct AboutView: View {
                     .fixedSize(horizontal: true, vertical: false)
             }
         }
-    }
-}
-
-struct AboutView_Previews: PreviewProvider {
-    static var previews: some View {
-        AboutView()
     }
 }

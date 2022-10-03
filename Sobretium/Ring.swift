@@ -13,15 +13,17 @@ struct Ring: View {
     public static let lineWidth: CGFloat = 20.0
     public static let tinyLineWidth: CGFloat = 3.0
     @State var color: Color?
+    @State var textColor: Color
     @Binding var progress: Float
     @State var divisor: Float
     @Binding var type: Bool
     @Binding var text: String
     @State var tiny: Bool
-    func text(_ text: String) -> NSAttributedString {
+    func text(_ text: String, _ color: Color) -> NSAttributedString {
         let font = UIFont.boldSystemFont(ofSize: 13)
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: font
+            .font: font,
+            .foregroundColor: UIColor(color)
         ]
         let string = NSAttributedString(string: text, attributes: attributes)
         return string
@@ -49,7 +51,7 @@ struct Ring: View {
                         .shadow(radius: tiny || performance ? 0 : 15)
                 }
                 if !tiny {
-                    PathText(text: text(text), path: Path() {$0.addArc(center: CGPoint(x: geometry.frame(in: .local).midX, y: geometry.frame(in: .local).midY), radius: (geometry.size.width / 2) - 5, startAngle: .degrees(-91), endAngle: .degrees(180), clockwise: false)})
+                    PathText(text: text(text, textColor), path: Path() {$0.addArc(center: CGPoint(x: geometry.frame(in: .local).midX, y: geometry.frame(in: .local).midY), radius: (geometry.size.width / 2) - 5, startAngle: .degrees(-91), endAngle: .degrees(180), clockwise: false)})
                 }
             }
         }

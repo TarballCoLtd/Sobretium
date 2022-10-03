@@ -23,21 +23,23 @@ struct SobrietyRings: View {
     @State var tiny: Bool = false
     @State var entry: SobrietyEntry
     @State var type: Bool
+    @State var theme: Theme
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     init(_ tiny: Bool, _ entry: SobrietyEntry, _ type: Bool) {
         self._tiny = State(initialValue: tiny)
         self._entry = State(initialValue: entry)
         self._type = State(initialValue: type)
+        self._theme = State(initialValue: Theme.themes[Int(entry.themeIndex)])
     }
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 if tiny {
-                    Ring(color: Color.purple, progress: $hours, divisor: 24, type: $type, text: $hoursText, tiny: tiny)
+                    Ring(color: theme.color3, textColor: theme.textColor3, progress: $hours, divisor: 24, type: $type, text: $hoursText, tiny: tiny)
                         .frame(width: geometry.size.width - ((Ring.tinyLineWidth * 6.0) + 10.0), height: geometry.size.height - ((Ring.tinyLineWidth * 6.0) + 10.0))
-                    Ring(color: Color.pink, progress: $days, divisor: 31, type: $type, text: $daysText, tiny: tiny)
+                    Ring(color: theme.color4, textColor: theme.textColor4, progress: $days, divisor: 31, type: $type, text: $daysText, tiny: tiny)
                         .frame(width: geometry.size.width - ((Ring.tinyLineWidth * 4.0) + 5.0), height: geometry.size.height - ((Ring.tinyLineWidth * 4.0) + 5.0))
-                    Ring(color: Color.orange, progress: $months, divisor: 12, type: $type, text: $monthsText, tiny: tiny)
+                    Ring(color: theme.color5, textColor: theme.textColor5, progress: $months, divisor: 12, type: $type, text: $monthsText, tiny: tiny)
                         .frame(width: geometry.size.width - (Ring.tinyLineWidth * 2.0), height: geometry.size.height - (Ring.tinyLineWidth * 2.0))
                 } else {
                     VStack {
@@ -46,15 +48,15 @@ struct SobrietyRings: View {
                         Text(entry.startDate!.daysAgo == 1 ? "Day" : "Days")
                     }
                     .multilineTextAlignment(.center)
-                    Ring(color: Color.teal, progress: $seconds, divisor: 60, type: $type, text: $secondsText, tiny: tiny)
+                    Ring(color: theme.color1, textColor: theme.textColor1, progress: $seconds, divisor: 60, type: $type, text: $secondsText, tiny: tiny)
                         .frame(width: geometry.size.width - ((Ring.lineWidth * 10.0) + 20.0), height: geometry.size.height - ((Ring.lineWidth * 10.0) + 20.0))
-                    Ring(color: Color.red, progress: $minutes, divisor: 60, type: $type, text: $minutesText, tiny: tiny)
+                    Ring(color: theme.color2, textColor: theme.textColor2, progress: $minutes, divisor: 60, type: $type, text: $minutesText, tiny: tiny)
                         .frame(width: geometry.size.width - ((Ring.lineWidth * 8.0) + 15.0), height: geometry.size.height - ((Ring.lineWidth * 8.0) + 15.0))
-                    Ring(color: Color.purple, progress: $hours, divisor: 24, type: $type, text: $hoursText, tiny: tiny)
+                    Ring(color: theme.color3, textColor: theme.textColor3, progress: $hours, divisor: 24, type: $type, text: $hoursText, tiny: tiny)
                         .frame(width: geometry.size.width - ((Ring.lineWidth * 6.0) + 10.0), height: geometry.size.height - ((Ring.lineWidth * 6.0) + 10.0))
-                    Ring(color: Color.pink, progress: $days, divisor: 31, type: $type, text: $daysText, tiny: tiny)
+                    Ring(color: theme.color4, textColor: theme.textColor4, progress: $days, divisor: 31, type: $type, text: $daysText, tiny: tiny)
                         .frame(width: geometry.size.width - ((Ring.lineWidth * 4.0) + 5.0), height: geometry.size.height - ((Ring.lineWidth * 4.0) + 5.0))
-                    Ring(color: Color.orange, progress: $months, divisor: 12, type: $type, text: $monthsText, tiny: tiny)
+                    Ring(color: theme.color5, textColor: theme.textColor5, progress: $months, divisor: 12, type: $type, text: $monthsText, tiny: tiny)
                         .frame(width: geometry.size.width - (Ring.lineWidth * 2.0), height: geometry.size.height - (Ring.lineWidth * 2.0))
                 }
             }

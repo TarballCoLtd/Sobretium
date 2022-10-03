@@ -15,11 +15,15 @@ struct EditTrackerSheet: View {
     @State var name: String
     @State var pickerDate: Date
     @State var subtitle: String
+    @State var currentTheme: String
+    let initialTheme: Int32
     init(_ entry: SobrietyEntry) {
         self._entry = State(initialValue: entry)
         self._name = State(initialValue: entry.name!)
         self._pickerDate = State(initialValue: entry.startDate!)
         self._subtitle = State(initialValue: entry.subtitle ?? "")
+        self._currentTheme = State(initialValue: Theme.themes[Int(entry.themeIndex)].name)
+        initialTheme = entry.themeIndex
     }
     var body: some View {
         NavigationView {
@@ -35,10 +39,23 @@ struct EditTrackerSheet: View {
                     Divider()
                     TextField("I've been \(name.count == 0 ? "..." : name.lowercased()) free for", text: $subtitle)
                 }
+                NavigationLink {
+                    ThemePicker(entry)
+                } label: {
+                    HStack {
+                        Text("Theme")
+                        Spacer()
+                        Text(currentTheme)
+                    }
+                    .onAppear {
+                        currentTheme = Theme.themes[Int(entry.themeIndex)].name
+                    }
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
+                        entry.themeIndex = initialTheme
                         presentation.wrappedValue.dismiss()
                     }
                 }
