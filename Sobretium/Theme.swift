@@ -15,14 +15,69 @@ class Theme: Identifiable, Equatable {
             "Sobretium"
         ),
         Theme(
+            Color(0xf0c22c), Color(0xee9e20), Color(0xe65104), Color(0xae3204), Color(0x751a01),
+            Color.black, Color.black, Color.white, Color.white, Color.white,
+            "Autumn"
+        ),
+        Theme(
             Color(0xfffeed), Color(0xcdd873), Color(0xd03b3b), Color(0x901a1a), Color(0x28543c),
-            Color.black, Color.black, Color.black, Color.white, Color.white,
+            Color.black, Color.black, Color.white, Color.white, Color.white,
             "Christmas"
         ),
         Theme(
-            Color.teal, Color.pink, Color.white, Color.pink, Color.teal,
+            Color(0xcdad75), Color(0x965336), Color(0x7e2c2e), Color(0x78021f), Color(0x450019),
+            Color.black, Color.white, Color.white, Color.white, Color.white,
+            "Ruby"
+        ),
+        Theme(
+            Color(0x2796ff), Color(0x29589f), Color(0x292c59), Color(0x17151d), Color.black,
+            Color.black, Color.white, Color.white, Color.white, Color.white,
+            "Starry Night"
+        ),
+        Theme(
+            Color(0xffe558), Color(0xffae2f), Color(0xff5a00), Color(0x832e01), Color.black,
+            Color.black, Color.black, Color.white, Color.white, Color.white,
+            "Halloween"
+        ),
+        Theme(
+            Color(0x6272a4), Color(0x50fa7b), Color(0xff79c6), Color(0xbd93f9), Color(0x44475a),
+            Color.white, Color.black, Color.black, Color.white, Color.white,
+            "Dracula"
+        ),
+        Theme( // TODO: is 2nd color okay as white?
+            Color(0xe40303), Color(0xff8c00), Color(0x008026), Color(0x004dff), Color(0x750787),
+            Color.white, Color.black, Color.white, Color.white, Color.white,
+            "Rainbow"
+        ),
+        Theme(
+            Color(0xd52d00), Color(0xff9a56), Color.white, Color(0xd362a4), Color(0xa30262),
+            Color.white, Color.white, Color.black, Color.white, Color.white,
+            "Lesbian Pride"
+        ),
+        Theme(
+            Color(0x26ceaa), Color(0x98e8c1), Color.white, Color(0x7bade2), Color(0x5049cc),
             Color.black, Color.black, Color.black, Color.white, Color.white,
+            "Gay Pride"
+        ),
+        Theme(
+            Color(0xd60270), Color(0x9b4f96), Color(0x9b4f96), Color(0x9b4f96), Color(0x0038a8),
+            Color.white, Color.white, Color.white, Color.white, Color.white,
+            "Bisexual Pride"
+        ),
+        Theme(
+            Color.teal, Color(0xf5a9b8), Color.white, Color(0xf5a9b8), Color.teal,
+            Color.black, Color.black, Color.black, Color.black, Color.black,
             "Trans Pride"
+        ),
+        Theme(
+            Color(0xff218c), Color(0xff218c), Color(0xffd800), Color(0x21b1ff), Color(0x21b1ff),
+            Color.white, Color.white, Color.black, Color.black, Color.black,
+            "Pansexual Pride"
+        ),
+        Theme(
+            Color(0xffd800), Color(0x7902aa), Color(0xffd800), Color(0x7902aa), Color(0xffd800),
+            Color.black, Color.white, Color.black, Color.white, Color.black,
+            "Intersex Pride"
         ),
     ]
     

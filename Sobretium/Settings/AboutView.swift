@@ -18,7 +18,7 @@ struct AboutView: View {
             Text("by Alyx Ferrari")
                 .font(.subheadline)
             Text("")
-            Text("Version 0.4 build 65")
+            Text("Version 0.4.1 build 71")
             Spacer()
         }
         .toolbar {
