@@ -23,28 +23,28 @@ struct SettingsView: View {
             Toggle(isOn: $stealth) {
                 HStack {
                     Text("Stealth Mode")
-                    Button {
-                        stealthInfoAlert = true
-                    } label: {
-                        Image(systemName: "info.circle")
-                    }
-                    .alert("Stealth mode removes most indicators that this app is for tracking sobriety.", isPresented: $stealthInfoAlert) {
-                        Button("OK", role: .cancel) {}
-                    }
+                    Image(systemName: "info.circle")
+                        .foregroundColor(.accentColor)
+                        .onTapGesture {
+                            stealthInfoAlert = true
+                        }
+                        .alert("Stealth mode removes most indicators that this app is for tracking sobriety.", isPresented: $stealthInfoAlert) {
+                            Button("OK", role: .cancel) {}
+                        }
                     Spacer()
                 }
             }
             Toggle(isOn: $performance) {
                 HStack {
                     Text("Performance Mode")
-                    Button {
-                        performanceInfoAlert = true
-                    } label: {
-                        Image(systemName: "info.circle")
-                    }
-                    .alert("Performance mode removes shadows and graphical effects to reduce battery usage.", isPresented: $performanceInfoAlert) {
-                        Button("OK", role: .cancel) {}
-                    }
+                    Image(systemName: "info.circle")
+                        .foregroundColor(.accentColor)
+                        .onTapGesture {
+                            performanceInfoAlert = true
+                        }
+                        .alert("Performance mode removes shadows and graphical effects to reduce battery usage.", isPresented: $performanceInfoAlert) {
+                            Button("OK", role: .cancel) {}
+                        }
                     Spacer()
                 }
             }
