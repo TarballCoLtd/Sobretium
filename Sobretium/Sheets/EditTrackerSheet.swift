@@ -22,7 +22,11 @@ struct EditTrackerSheet: View {
         self._name = State(initialValue: entry.name!)
         self._pickerDate = State(initialValue: entry.startDate!)
         self._subtitle = State(initialValue: entry.subtitle ?? "")
-        self._currentTheme = State(initialValue: Theme.themes[Int(entry.themeIndex)].name)
+        if entry.themeIndex > Theme.themes.count - 1 {
+            self._currentTheme = State(initialValue: Theme.prideThemes[Int(entry.themeIndex) - Theme.themes.count].name)
+        } else {
+            self._currentTheme = State(initialValue: Theme.themes[Int(entry.themeIndex)].name)
+        }
         initialTheme = entry.themeIndex
     }
     var body: some View {
@@ -48,7 +52,11 @@ struct EditTrackerSheet: View {
                         Text(currentTheme)
                     }
                     .onAppear {
-                        currentTheme = Theme.themes[Int(entry.themeIndex)].name
+                        if entry.themeIndex > Theme.themes.count - 1 {
+                            currentTheme = Theme.prideThemes[Int(entry.themeIndex) - Theme.themes.count].name
+                        } else {
+                            currentTheme = Theme.themes[Int(entry.themeIndex)].name
+                        }
                     }
                 }
             }

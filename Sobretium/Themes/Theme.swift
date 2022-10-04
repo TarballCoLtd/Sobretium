@@ -44,7 +44,9 @@ class Theme: Identifiable, Equatable {
             Color.white, Color.black, Color.black, Color.white, Color.white,
             "Dracula"
         ),
-        Theme( // TODO: is 2nd color okay as white?
+    ]
+    public static let prideThemes: [Theme] = [
+        Theme(
             Color(0xe40303), Color(0xff8c00), Color(0x008026), Color(0x004dff), Color(0x750787),
             Color.white, Color.black, Color.white, Color.white, Color.white,
             "Rainbow"
@@ -68,16 +70,6 @@ class Theme: Identifiable, Equatable {
             Color.teal, Color(0xf5a9b8), Color.white, Color(0xf5a9b8), Color.teal,
             Color.black, Color.black, Color.black, Color.black, Color.black,
             "Trans Pride"
-        ),
-        Theme(
-            Color(0xff218c), Color(0xff218c), Color(0xffd800), Color(0x21b1ff), Color(0x21b1ff),
-            Color.white, Color.white, Color.black, Color.black, Color.black,
-            "Pansexual Pride"
-        ),
-        Theme(
-            Color(0xffd800), Color(0x7902aa), Color(0xffd800), Color(0x7902aa), Color(0xffd800),
-            Color.black, Color.white, Color.black, Color.white, Color.black,
-            "Intersex Pride"
         ),
     ]
     

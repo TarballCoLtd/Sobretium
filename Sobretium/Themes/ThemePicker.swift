@@ -12,18 +12,36 @@ struct ThemePicker: View {
     @State var selectedTheme: String
     init(_ entry: SobrietyEntry) {
         self._entry = State(initialValue: entry)
-        selectedTheme = Theme.themes[Int(entry.themeIndex)].name
+        if entry.themeIndex > Theme.themes.count - 1 {
+            selectedTheme = Theme.prideThemes[Int(entry.themeIndex) - Theme.themes.count].name
+        } else {
+            selectedTheme = Theme.themes[Int(entry.themeIndex)].name
+        }
     }
     var body: some View {
         List {
-            ForEach(Theme.themes) { theme in
-                Button {
-                    selectedTheme = theme.name
-                    if let index = Theme.themes.firstIndex(of: theme) {
-                        entry.themeIndex = Int32(index)
+            Section {
+                ForEach(Theme.themes) { theme in
+                    Button {
+                        selectedTheme = theme.name
+                        if let index = Theme.themes.firstIndex(of: theme) {
+                            entry.themeIndex = Int32(index)
+                        }
+                    } label: {
+                        SelectionCell(theme, $selectedTheme)
                     }
-                } label: {
-                    SelectionCell(theme, $selectedTheme)
+                }
+            }
+            Section {
+                ForEach(Theme.prideThemes) { theme in
+                    Button {
+                        selectedTheme = theme.name
+                        if let index = Theme.prideThemes.firstIndex(of: theme) {
+                            entry.themeIndex = Int32(index + Theme.themes.count)
+                        }
+                    } label: {
+                        SelectionCell(theme, $selectedTheme)
+                    }
                 }
             }
         }
