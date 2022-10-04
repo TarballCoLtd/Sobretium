@@ -21,11 +21,13 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             if authenticated {
-                VStack {
+                Group {
                     if entries.count == 0 {
-                        Text("No Saved Trackers")
-                            .font(.title)
-                        Text("Press the + button to get started")
+                        VStack {
+                            Text("No Saved Trackers")
+                                .font(.title)
+                            Text("Press the + button to get started")
+                        }
                     } else {
                         List {
                             Section(header: Text(stealth ? "Trackers" : "Sobriety Trackers")) {
