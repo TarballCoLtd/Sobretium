@@ -17,13 +17,14 @@ struct ThemePicker: View {
     var body: some View {
         List {
             ForEach(Theme.themes) { theme in
-                SelectionCell(theme, $selectedTheme)
-                    .onTapGesture {
-                        selectedTheme = theme.name
-                        if let index = Theme.themes.firstIndex(of: theme) {
-                            entry.themeIndex = Int32(index)
-                        }
+                Button {
+                    selectedTheme = theme.name
+                    if let index = Theme.themes.firstIndex(of: theme) {
+                        entry.themeIndex = Int32(index)
                     }
+                } label: {
+                    SelectionCell(theme, $selectedTheme)
+                }
             }
         }
     }
