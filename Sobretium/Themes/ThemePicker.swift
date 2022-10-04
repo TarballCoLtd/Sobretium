@@ -45,6 +45,13 @@ struct ThemePicker: View {
                 }
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Theme Editor")
+                    .fixedSize(horizontal: true, vertical: false)
+                    .font(.headline)
+            }
+        }
     }
 }
 
