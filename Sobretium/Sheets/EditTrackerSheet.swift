@@ -10,18 +10,22 @@ import SwiftUI
 struct EditTrackerSheet: View {
     @Environment(\.presentationMode) var presentation
     @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
     @AppStorage("stealth") var stealth: Bool = false
     @State var entry: SobrietyEntry
     @State var name: String
     @State var pickerDate: Date
     @State var subtitle: String
     @State var currentTheme: String
+    @State var defaultEntry: Bool
+    @State var defaultInfoAlert: Bool = false
     let initialTheme: Int32
     init(_ entry: SobrietyEntry) {
         self._entry = State(initialValue: entry)
         self._name = State(initialValue: entry.name!)
         self._pickerDate = State(initialValue: entry.startDate!)
         self._subtitle = State(initialValue: entry.subtitle ?? "")
+        self._defaultEntry = State(initialValue: entry.defaultEntry)
         if entry.themeIndex > Theme.themes.count - 1 {
             self._currentTheme = State(initialValue: Theme.prideThemes[Int(entry.themeIndex) - Theme.themes.count].name)
         } else {
@@ -59,6 +63,20 @@ struct EditTrackerSheet: View {
                         }
                     }
                 }
+                Toggle(isOn: $defaultEntry) {
+                    HStack {
+                        Text(stealth ? "Default Tracker" : "Default Sobriety Tracker")
+                        Image(systemName: "info.circle")
+                            .foregroundColor(.accentColor)
+                            .onTapGesture {
+                                defaultInfoAlert = true
+                            }
+                            .alert("Your default tracker will automatically open when you open the app.", isPresented: $defaultInfoAlert) {
+                                Button("OK", role: .cancel) {}
+                            }
+                        Spacer()
+                    }
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -81,6 +99,12 @@ struct EditTrackerSheet: View {
                         } else {
                             entry.subtitle = subtitle
                         }
+                        if defaultEntry {
+                            for entry in entries {
+                                entry.defaultEntry = false
+                            }
+                        }
+                        entry.defaultEntry = defaultEntry
                         try? moc.save()
                         presentation.wrappedValue.dismiss()
                     }

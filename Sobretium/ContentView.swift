@@ -11,6 +11,7 @@ import LocalAuthentication
 struct ContentView: View {
     @AppStorage("stealth") var stealth: Bool = false
     @AppStorage("biometry") var biometry: Bool = false
+    @AppStorage("launchCount") var launchCount: Int = 0
     @State var addTrackerSheetPresented: Bool = false
     @State var editTrackerSheetPresented: Bool = false
     @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
@@ -18,6 +19,7 @@ struct ContentView: View {
     @State var deletionAlertPresented: Bool = false
     @Environment(\.managedObjectContext) var moc
     @State var authenticated: Bool = false
+    @State var linkSelection: String?
     var body: some View {
         NavigationView {
             if authenticated {
@@ -33,7 +35,7 @@ struct ContentView: View {
                             Section(header: Text(stealth ? "Trackers" : "Sobriety Trackers")) {
                                 ForEach(entries) { entry in
                                     if entry.startDate != nil && entry.name != nil {
-                                        NavigationLink {
+                                        NavigationLink(tag: entry.name!, selection: $linkSelection) {
                                             RingView(entry)
                                         } label: {
                                             Text(entry.name!)
@@ -48,7 +50,6 @@ struct ContentView: View {
                                             }
                                             .tint(.red)
                                             Button {
-                                                print("fart")
                                                 editTrackerSheetPresented = true
                                             } label: {
                                                 Image(systemName: "square.and.pencil")
@@ -111,9 +112,7 @@ struct ContentView: View {
     }
     func authenticate() {
         if !biometry {
-            withAnimation {
-                authenticated = true
-            }
+            showView()
             return
         }
         let context = LAContext()
@@ -122,21 +121,30 @@ struct ContentView: View {
             let reason = "Touch ID access is needed for biometric authentication."
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
                 if success {
-                    withAnimation {
-                        authenticated = true
-                    }
+                    showView()
                 } else {
-                    authenticate() // TODO: replace with PIN code
+                    authenticate()
                 }
             }
         } else {
             biometry = false
-            withAnimation {
-                authenticated = true
-            }
+            showView()
         }
         if let error = error {
             print(error)
+        }
+    }
+    func showView() {
+        launchCount += 1
+        for entry in entries {
+            if entry.defaultEntry {
+                linkSelection = entry.name!
+                authenticated = true
+                return
+            }
+        }
+        withAnimation {
+            authenticated = true
         }
     }
     func deleteAddiction(_ addiction: SobrietyEntry) {
