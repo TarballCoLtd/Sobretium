@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C229D3228EF523D006583DF /* SobretiumWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C229D3128EF523D006583DF /* SobretiumWatchApp.swift */; };
+		1C229D3428EF523D006583DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C229D3328EF523D006583DF /* ContentView.swift */; };
+		1C229D3628EF5241006583DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C229D3528EF5241006583DF /* Assets.xcassets */; };
+		1C229D3928EF5241006583DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C229D3828EF5241006583DF /* Preview Assets.xcassets */; };
+		1C229D3C28EF5241006583DF /* SobretiumWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1C229D2F28EF523D006583DF /* SobretiumWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1C2CB48B28E742A900215648 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CB48A28E742A900215648 /* DataController.swift */; };
 		1C37802F28E7579100440E06 /* SobrietyEntry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C37802C28E7579100440E06 /* SobrietyEntry.xcdatamodeld */; };
 		1C37803228E765BD00440E06 /* AppIconRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37803128E765BD00440E06 /* AppIconRings.swift */; };
@@ -37,6 +42,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1C229D3A28EF5241006583DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C91B1D328D0F2E00062C18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C229D2E28EF523D006583DF;
+			remoteInfo = "SobretiumWatch Watch App";
+		};
 		1C50F1B328ECF42D00AD9025 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1C91B1D328D0F2E00062C18A /* Project object */;
@@ -47,6 +59,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1C229D4028EF5241006583DF /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				1C229D3C28EF5241006583DF /* SobretiumWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C50F1B928ECF42D00AD9025 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -61,6 +84,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C229D2828EF50A8006583DF /* Sobretium.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sobretium.entitlements; sourceTree = "<group>"; };
+		1C229D2928EF50C0006583DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1C229D2A28EF5155006583DF /* SobretiumWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SobretiumWidgetExtension.entitlements; sourceTree = "<group>"; };
+		1C229D2F28EF523D006583DF /* SobretiumWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SobretiumWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C229D3128EF523D006583DF /* SobretiumWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobretiumWatchApp.swift; sourceTree = "<group>"; };
+		1C229D3328EF523D006583DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1C229D3528EF5241006583DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C229D3828EF5241006583DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1C229D4128EF5294006583DF /* SobretiumWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SobretiumWatch Watch App.entitlements"; sourceTree = "<group>"; };
+		1C229D4228EF529A006583DF /* SobretiumWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SobretiumWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1C2CB48A28E742A900215648 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		1C37802D28E7579100440E06 /* SobrietyEntry.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SobrietyEntry.xcdatamodel; sourceTree = "<group>"; };
 		1C37802E28E7579100440E06 /* SobrietyEntries.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SobrietyEntries.xcdatamodel; sourceTree = "<group>"; };
@@ -90,6 +123,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1C229D2C28EF523D006583DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C50F1A128ECF42800AD9025 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -131,6 +171,27 @@
 			path = Themes;
 			sourceTree = "<group>";
 		};
+		1C229D3028EF523D006583DF /* SobretiumWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				1C229D4228EF529A006583DF /* SobretiumWatch-Watch-App-Info.plist */,
+				1C229D4128EF5294006583DF /* SobretiumWatch Watch App.entitlements */,
+				1C229D3128EF523D006583DF /* SobretiumWatchApp.swift */,
+				1C229D3328EF523D006583DF /* ContentView.swift */,
+				1C229D3528EF5241006583DF /* Assets.xcassets */,
+				1C229D3728EF5241006583DF /* Preview Content */,
+			);
+			path = "SobretiumWatch Watch App";
+			sourceTree = "<group>";
+		};
+		1C229D3728EF5241006583DF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1C229D3828EF5241006583DF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		1C37803028E765B300440E06 /* Development */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,8 +223,10 @@
 		1C91B1D228D0F2E00062C18A = {
 			isa = PBXGroup;
 			children = (
+				1C229D2A28EF5155006583DF /* SobretiumWidgetExtension.entitlements */,
 				1C91B1DD28D0F2E00062C18A /* Sobretium */,
 				1C50F1AA28ECF42800AD9025 /* SobretiumWidget */,
+				1C229D3028EF523D006583DF /* SobretiumWatch Watch App */,
 				1C50F1A528ECF42800AD9025 /* Frameworks */,
 				1C91B1DC28D0F2E00062C18A /* Products */,
 			);
@@ -174,6 +237,7 @@
 			children = (
 				1C91B1DB28D0F2E00062C18A /* Sobretium.app */,
 				1C50F1A428ECF42800AD9025 /* SobretiumWidgetExtension.appex */,
+				1C229D2F28EF523D006583DF /* SobretiumWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +245,8 @@
 		1C91B1DD28D0F2E00062C18A /* Sobretium */ = {
 			isa = PBXGroup;
 			children = (
+				1C229D2928EF50C0006583DF /* Info.plist */,
+				1C229D2828EF50A8006583DF /* Sobretium.entitlements */,
 				1C2CB48A28E742A900215648 /* DataController.swift */,
 				1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */,
 				1C91B1E028D0F2E00062C18A /* ContentView.swift */,
@@ -225,6 +291,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1C229D2E28EF523D006583DF /* SobretiumWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C229D3D28EF5241006583DF /* Build configuration list for PBXNativeTarget "SobretiumWatch Watch App" */;
+			buildPhases = (
+				1C229D2B28EF523D006583DF /* Sources */,
+				1C229D2C28EF523D006583DF /* Frameworks */,
+				1C229D2D28EF523D006583DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SobretiumWatch Watch App";
+			productName = "SobretiumWatch Watch App";
+			productReference = 1C229D2F28EF523D006583DF /* SobretiumWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		1C50F1A328ECF42800AD9025 /* SobretiumWidgetExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C50F1B628ECF42D00AD9025 /* Build configuration list for PBXNativeTarget "SobretiumWidgetExtension" */;
@@ -250,11 +333,13 @@
 				1C91B1D828D0F2E00062C18A /* Frameworks */,
 				1C91B1D928D0F2E00062C18A /* Resources */,
 				1C50F1B928ECF42D00AD9025 /* Embed Foundation Extensions */,
+				1C229D4028EF5241006583DF /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				1C50F1B428ECF42D00AD9025 /* PBXTargetDependency */,
+				1C229D3B28EF5241006583DF /* PBXTargetDependency */,
 			);
 			name = Sobretium;
 			packageProductDependencies = (
@@ -275,6 +360,9 @@
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					1C229D2E28EF523D006583DF = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
 					1C50F1A328ECF42800AD9025 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -302,11 +390,21 @@
 			targets = (
 				1C91B1DA28D0F2E00062C18A /* Sobretium */,
 				1C50F1A328ECF42800AD9025 /* SobretiumWidgetExtension */,
+				1C229D2E28EF523D006583DF /* SobretiumWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1C229D2D28EF523D006583DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C229D3928EF5241006583DF /* Preview Assets.xcassets in Resources */,
+				1C229D3628EF5241006583DF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C50F1A228ECF42800AD9025 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,6 +425,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1C229D2B28EF523D006583DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C229D3428EF523D006583DF /* ContentView.swift in Sources */,
+				1C229D3228EF523D006583DF /* SobretiumWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C50F1A028ECF42800AD9025 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,6 +470,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1C229D3B28EF5241006583DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C229D2E28EF523D006583DF /* SobretiumWatch Watch App */;
+			targetProxy = 1C229D3A28EF5241006583DF /* PBXContainerItemProxy */;
+		};
 		1C50F1B428ECF42D00AD9025 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1C50F1A328ECF42800AD9025 /* SobretiumWidgetExtension */;
@@ -371,12 +483,81 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1C229D3E28EF5241006583DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "SobretiumWatch Watch App/SobretiumWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 108;
+				DEVELOPMENT_ASSET_PATHS = "\"SobretiumWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = W8C8UQ95CG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SobretiumWatch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Sobretium;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.alyxferrari.Sobretium;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		1C229D3F28EF5241006583DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "SobretiumWatch Watch App/SobretiumWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 108;
+				DEVELOPMENT_ASSET_PATHS = "\"SobretiumWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = W8C8UQ95CG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SobretiumWatch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Sobretium;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.alyxferrari.Sobretium;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
 		1C50F1B728ECF42D00AD9025 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = SobretiumWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 108;
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
@@ -410,6 +591,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = SobretiumWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 108;
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
@@ -554,6 +736,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 108;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
@@ -564,6 +747,7 @@
 					"TARGET_IS_WIDGET_EXTENSION=0",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sobretium/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Sobretium;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID access is needed for biometric authentication.";
@@ -593,6 +777,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 108;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
@@ -600,6 +785,7 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "TARGET_IS_WIDGET_EXTENSION=0";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sobretium/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Sobretium;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID access is needed for biometric authentication.";
@@ -626,6 +812,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1C229D3D28EF5241006583DF /* Build configuration list for PBXNativeTarget "SobretiumWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C229D3E28EF5241006583DF /* Debug */,
+				1C229D3F28EF5241006583DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1C50F1B628ECF42D00AD9025 /* Build configuration list for PBXNativeTarget "SobretiumWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
