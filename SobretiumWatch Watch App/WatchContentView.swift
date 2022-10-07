@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  WatchContentView.swift
 //  SobretiumWatch Watch App
 //
 //  Created by Tarball on 10/6/22.
@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                ForEach(entries) { entry in
+                    Text(entry.name!)
+                }
+            }
         }
-        .padding()
     }
 }
 

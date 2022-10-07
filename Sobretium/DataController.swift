@@ -16,5 +16,6 @@ class DataController: ObservableObject {
                 print("core data made a booboo: \(error.localizedDescription)")
             }
         }
+        container.viewContext.automaticallyMergesChangesFromParent = true
     }
 }
