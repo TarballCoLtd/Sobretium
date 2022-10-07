@@ -17,7 +17,6 @@
 		1C2CB48B28E742A900215648 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CB48A28E742A900215648 /* DataController.swift */; };
 		1C37802F28E7579100440E06 /* SobrietyEntry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C37802C28E7579100440E06 /* SobrietyEntry.xcdatamodeld */; };
 		1C37803228E765BD00440E06 /* AppIconRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37803128E765BD00440E06 /* AppIconRings.swift */; };
-		1C50F1B228ECF42D00AD9025 /* SobretiumWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F1AD28ECF42900AD9025 /* SobretiumWidget.intentdefinition */; };
 		1C5F922528D2522300BE053D /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F922428D2522300BE053D /* RingView.swift */; };
 		1C91B1DF28D0F2E00062C18A /* SobretiumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */; };
 		1C91B1E128D0F2E00062C18A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91B1E028D0F2E00062C18A /* ContentView.swift */; };
@@ -91,10 +90,6 @@
 		1C37803128E765BD00440E06 /* AppIconRings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconRings.swift; sourceTree = "<group>"; };
 		1C50F1A628ECF42800AD9025 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1C50F1A828ECF42800AD9025 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		1C50F1AB28ECF42800AD9025 /* SobretiumWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobretiumWidget.swift; sourceTree = "<group>"; };
-		1C50F1AD28ECF42900AD9025 /* SobretiumWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SobretiumWidget.intentdefinition; sourceTree = "<group>"; };
-		1C50F1AE28ECF42D00AD9025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1C50F1B028ECF42D00AD9025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C5F922428D2522300BE053D /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		1C91B1DB28D0F2E00062C18A /* Sobretium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sobretium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobretiumApp.swift; sourceTree = "<group>"; };
@@ -195,23 +190,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1C50F1AA28ECF42800AD9025 /* SobretiumWidget */ = {
-			isa = PBXGroup;
-			children = (
-				1C50F1AB28ECF42800AD9025 /* SobretiumWidget.swift */,
-				1C50F1AD28ECF42900AD9025 /* SobretiumWidget.intentdefinition */,
-				1C50F1AE28ECF42D00AD9025 /* Assets.xcassets */,
-				1C50F1B028ECF42D00AD9025 /* Info.plist */,
-			);
-			path = SobretiumWidget;
-			sourceTree = "<group>";
-		};
 		1C91B1D228D0F2E00062C18A = {
 			isa = PBXGroup;
 			children = (
 				1C229D2A28EF5155006583DF /* SobretiumWidgetExtension.entitlements */,
 				1C91B1DD28D0F2E00062C18A /* Sobretium */,
-				1C50F1AA28ECF42800AD9025 /* SobretiumWidget */,
 				1C229D3028EF523D006583DF /* SobretiumWatch Watch App */,
 				1C50F1A528ECF42800AD9025 /* Frameworks */,
 				1C91B1DC28D0F2E00062C18A /* Products */,
@@ -415,7 +398,6 @@
 				1CA7E19028EA15C2005E68A0 /* EditTrackerSheet.swift in Sources */,
 				1C37802F28E7579100440E06 /* SobrietyEntry.xcdatamodeld in Sources */,
 				1C5F922528D2522300BE053D /* RingView.swift in Sources */,
-				1C50F1B228ECF42D00AD9025 /* SobretiumWidget.intentdefinition in Sources */,
 				1C91B1DF28D0F2E00062C18A /* SobretiumApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
