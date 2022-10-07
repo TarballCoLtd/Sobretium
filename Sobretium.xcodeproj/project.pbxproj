@@ -17,14 +17,7 @@
 		1C2CB48B28E742A900215648 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CB48A28E742A900215648 /* DataController.swift */; };
 		1C37802F28E7579100440E06 /* SobrietyEntry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C37802C28E7579100440E06 /* SobrietyEntry.xcdatamodeld */; };
 		1C37803228E765BD00440E06 /* AppIconRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37803128E765BD00440E06 /* AppIconRings.swift */; };
-		1C50F1A728ECF42800AD9025 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C50F1A628ECF42800AD9025 /* WidgetKit.framework */; };
-		1C50F1A928ECF42800AD9025 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C50F1A828ECF42800AD9025 /* SwiftUI.framework */; };
-		1C50F1AC28ECF42800AD9025 /* SobretiumWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F1AB28ECF42800AD9025 /* SobretiumWidget.swift */; };
-		1C50F1AF28ECF42D00AD9025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C50F1AE28ECF42D00AD9025 /* Assets.xcassets */; };
-		1C50F1B128ECF42D00AD9025 /* SobretiumWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F1AD28ECF42900AD9025 /* SobretiumWidget.intentdefinition */; };
 		1C50F1B228ECF42D00AD9025 /* SobretiumWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F1AD28ECF42900AD9025 /* SobretiumWidget.intentdefinition */; };
-		1C50F1B528ECF42D00AD9025 /* SobretiumWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1C50F1A428ECF42800AD9025 /* SobretiumWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		1C50F1BC28ED087C00AD9025 /* SobrietyEntry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C37802C28E7579100440E06 /* SobrietyEntry.xcdatamodeld */; };
 		1C5F922528D2522300BE053D /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F922428D2522300BE053D /* RingView.swift */; };
 		1C91B1DF28D0F2E00062C18A /* SobretiumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */; };
 		1C91B1E128D0F2E00062C18A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91B1E028D0F2E00062C18A /* ContentView.swift */; };
@@ -55,13 +48,6 @@
 			remoteGlobalIDString = 1C229D2E28EF523D006583DF;
 			remoteInfo = "SobretiumWatch Watch App";
 		};
-		1C50F1B328ECF42D00AD9025 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1C91B1D328D0F2E00062C18A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1C50F1A328ECF42800AD9025;
-			remoteInfo = SobretiumWidgetExtension;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,7 +68,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				1C50F1B528ECF42D00AD9025 /* SobretiumWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,7 +89,6 @@
 		1C37802D28E7579100440E06 /* SobrietyEntry.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SobrietyEntry.xcdatamodel; sourceTree = "<group>"; };
 		1C37802E28E7579100440E06 /* SobrietyEntries.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SobrietyEntries.xcdatamodel; sourceTree = "<group>"; };
 		1C37803128E765BD00440E06 /* AppIconRings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconRings.swift; sourceTree = "<group>"; };
-		1C50F1A428ECF42800AD9025 /* SobretiumWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SobretiumWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C50F1A628ECF42800AD9025 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1C50F1A828ECF42800AD9025 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		1C50F1AB28ECF42800AD9025 /* SobretiumWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobretiumWidget.swift; sourceTree = "<group>"; };
@@ -136,15 +120,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CFF14D228EFAEFC0022BAD6 /* Time in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C50F1A128ECF42800AD9025 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C50F1A928ECF42800AD9025 /* SwiftUI.framework in Frameworks */,
-				1C50F1A728ECF42800AD9025 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				1C91B1DB28D0F2E00062C18A /* Sobretium.app */,
-				1C50F1A428ECF42800AD9025 /* SobretiumWidgetExtension.appex */,
 				1C229D2F28EF523D006583DF /* SobretiumWatch Watch App.app */,
 			);
 			name = Products;
@@ -322,23 +296,6 @@
 			productReference = 1C229D2F28EF523D006583DF /* SobretiumWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1C50F1A328ECF42800AD9025 /* SobretiumWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1C50F1B628ECF42D00AD9025 /* Build configuration list for PBXNativeTarget "SobretiumWidgetExtension" */;
-			buildPhases = (
-				1C50F1A028ECF42800AD9025 /* Sources */,
-				1C50F1A128ECF42800AD9025 /* Frameworks */,
-				1C50F1A228ECF42800AD9025 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SobretiumWidgetExtension;
-			productName = SobretiumWidgetExtension;
-			productReference = 1C50F1A428ECF42800AD9025 /* SobretiumWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		1C91B1DA28D0F2E00062C18A /* Sobretium */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C91B1E928D0F2E30062C18A /* Build configuration list for PBXNativeTarget "Sobretium" */;
@@ -352,7 +309,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1C50F1B428ECF42D00AD9025 /* PBXTargetDependency */,
 				1C229D3B28EF5241006583DF /* PBXTargetDependency */,
 			);
 			name = Sobretium;
@@ -375,9 +331,6 @@
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					1C229D2E28EF523D006583DF = {
-						CreatedOnToolsVersion = 14.0.1;
-					};
-					1C50F1A328ECF42800AD9025 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
 					1C91B1DA28D0F2E00062C18A = {
@@ -403,7 +356,6 @@
 			projectRoot = "";
 			targets = (
 				1C91B1DA28D0F2E00062C18A /* Sobretium */,
-				1C50F1A328ECF42800AD9025 /* SobretiumWidgetExtension */,
 				1C229D2E28EF523D006583DF /* SobretiumWatch Watch App */,
 			);
 		};
@@ -416,14 +368,6 @@
 			files = (
 				1C229D3928EF5241006583DF /* Preview Assets.xcassets in Resources */,
 				1C229D3628EF5241006583DF /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C50F1A228ECF42800AD9025 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C50F1AF28ECF42D00AD9025 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,16 +394,6 @@
 				1C229D4328EF557C006583DF /* DataController.swift in Sources */,
 				1C229D3228EF523D006583DF /* SobretiumWatchApp.swift in Sources */,
 				1CFF14D528EFB0B90022BAD6 /* Theme.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C50F1A028ECF42800AD9025 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C50F1B128ECF42D00AD9025 /* SobretiumWidget.intentdefinition in Sources */,
-				1C50F1BC28ED087C00AD9025 /* SobrietyEntry.xcdatamodeld in Sources */,
-				1C50F1AC28ECF42800AD9025 /* SobretiumWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,11 +428,6 @@
 			target = 1C229D2E28EF523D006583DF /* SobretiumWatch Watch App */;
 			targetProxy = 1C229D3A28EF5241006583DF /* PBXContainerItemProxy */;
 		};
-		1C50F1B428ECF42D00AD9025 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1C50F1A328ECF42800AD9025 /* SobretiumWidgetExtension */;
-			targetProxy = 1C50F1B328ECF42D00AD9025 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -510,7 +439,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "SobretiumWatch Watch App/SobretiumWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 108;
+				CURRENT_PROJECT_VERSION = 115;
 				DEVELOPMENT_ASSET_PATHS = "\"SobretiumWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -544,7 +473,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "SobretiumWatch Watch App/SobretiumWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 108;
+				CURRENT_PROJECT_VERSION = 115;
 				DEVELOPMENT_ASSET_PATHS = "\"SobretiumWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -567,71 +496,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Release;
-		};
-		1C50F1B728ECF42D00AD9025 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_ENTITLEMENTS = SobretiumWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 108;
-				DEVELOPMENT_TEAM = W8C8UQ95CG;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"TARGET_IS_WIDGET_EXTENSION=1",
-					"DEBUG=1",
-				);
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SobretiumWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SobretiumWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 0.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium.SobretiumWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		1C50F1B828ECF42D00AD9025 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_ENTITLEMENTS = SobretiumWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 108;
-				DEVELOPMENT_TEAM = W8C8UQ95CG;
-				GCC_PREPROCESSOR_DEFINITIONS = "TARGET_IS_WIDGET_EXTENSION=1";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SobretiumWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SobretiumWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 0.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium.SobretiumWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -757,7 +621,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 108;
+				CURRENT_PROJECT_VERSION = 115;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -799,7 +663,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 108;
+				CURRENT_PROJECT_VERSION = 115;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -838,15 +702,6 @@
 			buildConfigurations = (
 				1C229D3E28EF5241006583DF /* Debug */,
 				1C229D3F28EF5241006583DF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1C50F1B628ECF42D00AD9025 /* Build configuration list for PBXNativeTarget "SobretiumWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1C50F1B728ECF42D00AD9025 /* Debug */,
-				1C50F1B828ECF42D00AD9025 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
