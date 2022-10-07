@@ -41,6 +41,10 @@
 		1CF24EB828D0F35C000E75A5 /* NewTimerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */; };
 		1CF24EB928D0F35C000E75A5 /* SobrietyRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */; };
 		1CF24EBA28D0F35C000E75A5 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB628D0F35C000E75A5 /* Ring.swift */; };
+		1CFF14CE28EFAEAC0022BAD6 /* WatchRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFF14CD28EFAEAC0022BAD6 /* WatchRing.swift */; };
+		1CFF14D228EFAEFC0022BAD6 /* Time in Frameworks */ = {isa = PBXBuildFile; productRef = 1CFF14D128EFAEFC0022BAD6 /* Time */; };
+		1CFF14D428EFAFE40022BAD6 /* WatchSobrietyRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFF14D328EFAFE40022BAD6 /* WatchSobrietyRings.swift */; };
+		1CFF14D528EFB0B90022BAD6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB54DC128EA6E0900CDE2A4 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +126,8 @@
 		1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTimerSheet.swift; sourceTree = "<group>"; };
 		1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobrietyRings.swift; sourceTree = "<group>"; };
 		1CF24EB628D0F35C000E75A5 /* Ring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
+		1CFF14CD28EFAEAC0022BAD6 /* WatchRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRing.swift; sourceTree = "<group>"; };
+		1CFF14D328EFAFE40022BAD6 /* WatchSobrietyRings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSobrietyRings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CFF14D228EFAEFC0022BAD6 /* Time in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +189,8 @@
 				1C229D3328EF523D006583DF /* WatchContentView.swift */,
 				1C229D3528EF5241006583DF /* Assets.xcassets */,
 				1C229D3728EF5241006583DF /* Preview Content */,
+				1CFF14CD28EFAEAC0022BAD6 /* WatchRing.swift */,
+				1CFF14D328EFAFE40022BAD6 /* WatchSobrietyRings.swift */,
 			);
 			path = "SobretiumWatch Watch App";
 			sourceTree = "<group>";
@@ -306,6 +315,9 @@
 			dependencies = (
 			);
 			name = "SobretiumWatch Watch App";
+			packageProductDependencies = (
+				1CFF14D128EFAEFC0022BAD6 /* Time */,
+			);
 			productName = "SobretiumWatch Watch App";
 			productReference = 1C229D2F28EF523D006583DF /* SobretiumWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
@@ -431,10 +443,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CFF14D428EFAFE40022BAD6 /* WatchSobrietyRings.swift in Sources */,
 				1C229D3428EF523D006583DF /* WatchContentView.swift in Sources */,
 				1C229D4428EF559C006583DF /* SobrietyEntry.xcdatamodeld in Sources */,
+				1CFF14CE28EFAEAC0022BAD6 /* WatchRing.swift in Sources */,
 				1C229D4328EF557C006583DF /* DataController.swift in Sources */,
 				1C229D3228EF523D006583DF /* SobretiumWatchApp.swift in Sources */,
+				1CFF14D528EFB0B90022BAD6 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +519,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Sobretium;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.alyxferrari.Sobretium;
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -538,7 +553,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Sobretium;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.alyxferrari.Sobretium;
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -882,6 +897,11 @@
 			productName = PathText;
 		};
 		1C9F35EC28E60A6300C69CCB /* Time */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C9F35EB28E60A6300C69CCB /* XCRemoteSwiftPackageReference "time" */;
+			productName = Time;
+		};
+		1CFF14D128EFAEFC0022BAD6 /* Time */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1C9F35EB28E60A6300C69CCB /* XCRemoteSwiftPackageReference "time" */;
 			productName = Time;
