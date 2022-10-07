@@ -29,7 +29,11 @@ struct SobrietyRings: View {
         self._tiny = State(initialValue: tiny)
         self._entry = State(initialValue: entry)
         self._type = State(initialValue: type)
-        self._theme = State(initialValue: Theme.themes[Int(entry.themeIndex)])
+        if entry.themeIndex > Theme.themes.count - 1 {
+            self._theme = State(initialValue: Theme.prideThemes[Int(entry.themeIndex) - Theme.themes.count])
+        } else {
+            self._theme = State(initialValue: Theme.themes[Int(entry.themeIndex)])
+        }
     }
     var body: some View {
         GeometryReader { geometry in

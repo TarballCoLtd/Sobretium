@@ -16,10 +16,38 @@ struct SettingsView: View {
     @State var biometryToggleLabel: String = "Enable \(SettingsView.authenticationType())"
     @State var biometryMissingAlert: Bool = false
     @State var biometryUnsupportedAlert: Bool = false
+    @State var stealthInfoAlert: Bool = false
+    @State var performanceInfoAlert: Bool = false
     var body: some View {
         List {
-            Toggle("Stealth Mode", isOn: $stealth)
-            Toggle("Performance Mode", isOn: $performance)
+            Toggle(isOn: $stealth) {
+                HStack {
+                    Text("Stealth Mode")
+                    Image(systemName: "info.circle")
+                        .foregroundColor(.accentColor)
+                        .onTapGesture {
+                            stealthInfoAlert = true
+                        }
+                        .alert("Stealth mode removes most indicators that this app is for tracking sobriety.", isPresented: $stealthInfoAlert) {
+                            Button("OK", role: .cancel) {}
+                        }
+                    Spacer()
+                }
+            }
+            Toggle(isOn: $performance) {
+                HStack {
+                    Text("Performance Mode")
+                    Image(systemName: "info.circle")
+                        .foregroundColor(.accentColor)
+                        .onTapGesture {
+                            performanceInfoAlert = true
+                        }
+                        .alert("Performance mode removes shadows and graphical effects to reduce battery usage.", isPresented: $performanceInfoAlert) {
+                            Button("OK", role: .cancel) {}
+                        }
+                    Spacer()
+                }
+            }
             Toggle(biometryToggleLabel, isOn: $biometry)
                 .onChange(of: biometry, perform: authenticate)
                 .alert("\(SettingsView.authenticationType()) is not set up on your device.", isPresented: $biometryMissingAlert) {
