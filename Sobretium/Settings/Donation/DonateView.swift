@@ -34,6 +34,7 @@ struct DonateView: View {
                 Text("However, if you'd like to show your support for the developer, you may do so here.")
             }
             .multilineTextAlignment(.center)
+            .padding(.horizontal, 5)
             Spacer()
                 .frame(maxWidth: 100, maxHeight: 100)
             HStack {
@@ -72,6 +73,7 @@ struct DonateView: View {
         Task.init(priority: .background) {
             do {
                 products = try await Product.products(for: ["com.alyxferrari.Sobretium.donation1", "com.alyxferrari.Sobretium.donation5", "com.alyxferrari.Sobretium.donation10"])
+                products = products.sorted(by: { $0.price < $1.price })
             } catch {
                 print(error)
             }

@@ -43,7 +43,7 @@ struct SettingsView: View {
                             .onTapGesture {
                                 performanceInfoAlert = true
                             }
-                            .alert("Performance mode removes shadows and graphical effects to reduce battery usage.", isPresented: $performanceInfoAlert) {
+                            .alert("Performance mode removes shadows and some graphical effects to reduce battery usage.", isPresented: $performanceInfoAlert) {
                                 Button("OK", role: .cancel) {}
                             }
                         Spacer()
