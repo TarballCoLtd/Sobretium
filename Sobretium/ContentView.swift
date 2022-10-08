@@ -20,6 +20,10 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @State var authenticated: Bool = false
     @State var linkSelection: String?
+    var updateListenerTask: Task<Void, Error>? = nil
+    init() {
+        updateListenerTask = listenForTransactions()
+    }
     var body: some View {
         NavigationView {
             if authenticated {
@@ -150,5 +154,17 @@ struct ContentView: View {
     func deleteAddiction(_ addiction: SobrietyEntry) {
         deletionCandidate = addiction
         deletionAlertPresented = true
+    }
+    func listenForTransactions() -> Task<Void, Error> {
+        return Task.detached {
+            for await result in Transaction.updates {
+                do {
+                    let transaction = try DonateView.checkVerified(result)
+                    await transaction.finish()
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
 }

@@ -77,11 +77,12 @@ struct SobrietyRings: View {
         }
     }
     func update() {
-        seconds = self.entry.startDate!.secondsAgoAlt
-        minutes = self.entry.startDate!.minutesAgoAlt
-        hours = self.entry.startDate!.hoursAgoAlt
-        days = self.entry.startDate!.daysAgoAlt
-        months = self.entry.startDate!.monthsAgoAlt
+        guard let date = entry.startDate else { return }
+        seconds = date.secondsAgoAlt
+        minutes = date.minutesAgoAlt
+        hours = date.hoursAgoAlt
+        days = date.daysAgoAlt
+        months = date.monthsAgoAlt
         secondsText = "\(Int(seconds.rounded(.down))) \(seconds == 1 ? " second" : " seconds")"
         minutesText = "\(Int(minutes.rounded(.down))) \(minutes == 1 ? " minute" : " minutes")"
         hoursText = "\(Int(hours.rounded(.down))) \(hours == 1 ? " hour" : " hours")"
