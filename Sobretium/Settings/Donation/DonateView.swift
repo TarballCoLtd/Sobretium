@@ -18,6 +18,7 @@ public enum StoreError: Error {
 
 struct DonateView: View {
     @State var products: [Product] = []
+    @State var thankYouDict: [String: Bool] = [:]
     var body: some View {
         VStack {
             Image(systemName: "giftcard")
@@ -31,34 +32,56 @@ struct DonateView: View {
                 Text("This app is completely free of charge, and will stay that way forever.")
                     .font(.title2)
                 Text("")
-                Text("However, if you'd like to show your support for the developer, you may do so here.")
+                Text("However, if you'd like to support development of the app, you may do so here.")
             }
             .multilineTextAlignment(.center)
             .padding(.horizontal, 5)
             Spacer()
                 .frame(maxWidth: 100, maxHeight: 100)
+            if products.count == 0 {
+                HStack {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .padding(.horizontal, 2)
+                    Text("Loading...")
+                        .foregroundColor(.gray)
+                }
+                .padding(.vertical)
+            }
             HStack {
                 ForEach(products) { product in
                     Button {
                         Task.init(priority: .background) {
                             do {
-                                _ = try await purchase(product)
+                                let fart = try await purchase(product)
+                                if fart != nil { thankYouDict[product.id] = true }
                             } catch {
                                 print(error)
                             }
                         }
                     } label: {
-                        Text(product.displayPrice)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.accentColor)
-                            .foregroundColor(.white)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                            .font(.headline)
+                        if thankYouDict[product.id] == nil {
+                            Text(product.displayPrice)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.accentColor)
+                                .foregroundColor(.white)
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .font(.headline)
+                        } else {
+                            Text("Thank you! ❤️")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.green)
+                                .foregroundColor(.white)
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .font(.headline)
+                        }
                     }
-                    .padding(.horizontal, 2)
+                    .padding(.horizontal, 1)
                 }
             }
+            .padding(.horizontal, 5)
             .onAppear(perform: fetchProducts)
         }
         .toolbar {
@@ -70,7 +93,7 @@ struct DonateView: View {
         }
     }
     func fetchProducts() {
-        Task.init(priority: .background) {
+        Task.init(priority: .high) {
             do {
                 products = try await Product.products(for: ["com.alyxferrari.Sobretium.donation1", "com.alyxferrari.Sobretium.donation5", "com.alyxferrari.Sobretium.donation10"])
                 products = products.sorted(by: { $0.price < $1.price })

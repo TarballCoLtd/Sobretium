@@ -155,7 +155,7 @@ struct ContentView: View {
         deletionCandidate = addiction
         deletionAlertPresented = true
     }
-    func listenForTransactions() -> Task<Void, Error> {
+    func listenForTransactions() -> Task<Void, Error> { // ripped from Apple's demo lol
         return Task.detached {
             for await result in Transaction.updates {
                 do {

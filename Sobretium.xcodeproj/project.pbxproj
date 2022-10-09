@@ -244,9 +244,9 @@
 		1C9F35EE28E6142D00C69CCB /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				1CB811DB28F09709008A85CC /* Donation */,
 				1CE8FC7228D3965800940E07 /* SettingsView.swift */,
 				1C9F35EF28E6144000C69CCB /* AboutView.swift */,
+				1CB811DB28F09709008A85CC /* Donation */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -617,7 +617,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 156;
+				CURRENT_PROJECT_VERSION = 167;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -659,7 +659,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 156;
+				CURRENT_PROJECT_VERSION = 167;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
