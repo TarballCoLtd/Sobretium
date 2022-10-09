@@ -1,0 +1,16 @@
+{
+  "source": "/Users/alyxferrari/Documents/GitHub/Sobretium/SobretiumWatch Watch App/WatchSobrietyRings.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Day"
+      },
+      {
+        "comment": "",
+        "key": "Days"
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,17 @@
+version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
+options: "a87f431832bc673710d730f1ada03539b64af916e439559770fd130139bfeb9b"
+build_start_time: [1665346331, 210741996]
+build_end_time: [1665346342, 145000934]
+inputs:
+  "/Users/alyxferrari/Documents/GitHub/Sobretium/Sobretium/DataController.swift": [1665096505, 642586708]
+  "/Users/alyxferrari/Documents/GitHub/Sobretium/Sobretium/Themes/Theme.swift": [1664909292, 724545240]
+  "/Users/alyxferrari/Documents/GitHub/Sobretium/SobretiumWatch Watch App/SobretiumWatchApp.swift": [1665080914, 61073780]
+  "/Users/alyxferrari/Documents/GitHub/Sobretium/SobretiumWatch Watch App/WatchContentView.swift": [1665161960, 949698448]
+  "/Users/alyxferrari/Documents/GitHub/Sobretium/SobretiumWatch Watch App/WatchRing.swift": [1665105444, 288985252]
+  "/Users/alyxferrari/Documents/GitHub/Sobretium/SobretiumWatch Watch App/WatchSobrietyRings.swift": [1665104382, 305931091]
+  ? "/Users/alyxferrari/Documents/GitHub/Sobretium/build/Sobretium.build/Release-watchos/SobretiumWatch Watch App.build/DerivedSources/CoreDataGenerated/SobrietyEntry/SobrietyEntry+CoreDataClass.swift"
+  : [1665346331, 70946693]
+  ? "/Users/alyxferrari/Documents/GitHub/Sobretium/build/Sobretium.build/Release-watchos/SobretiumWatch Watch App.build/DerivedSources/CoreDataGenerated/SobrietyEntry/SobrietyEntry+CoreDataModel.swift"
+  : [1665346331, 65731048]
+  ? "/Users/alyxferrari/Documents/GitHub/Sobretium/build/Sobretium.build/Release-watchos/SobretiumWatch Watch App.build/DerivedSources/CoreDataGenerated/SobrietyEntry/SobrietyEntry+CoreDataProperties.swift"
+  : [1665346331, 74026107]
