@@ -20,46 +20,55 @@ struct SettingsView: View {
     @State var performanceInfoAlert: Bool = false
     var body: some View {
         List {
-            Toggle(isOn: $stealth) {
-                HStack {
-                    Text("Stealth Mode")
-                    Image(systemName: "info.circle")
-                        .foregroundColor(.accentColor)
-                        .onTapGesture {
-                            stealthInfoAlert = true
-                        }
-                        .alert("Stealth mode removes most indicators that this app is for tracking sobriety.", isPresented: $stealthInfoAlert) {
-                            Button("OK", role: .cancel) {}
-                        }
-                    Spacer()
+            Section {
+                Toggle(isOn: $stealth) {
+                    HStack {
+                        Text("Stealth Mode")
+                        Image(systemName: "info.circle")
+                            .foregroundColor(.accentColor)
+                            .onTapGesture {
+                                stealthInfoAlert = true
+                            }
+                            .alert("Stealth mode removes most indicators that this app is for tracking sobriety.", isPresented: $stealthInfoAlert) {
+                                Button("OK", role: .cancel) {}
+                            }
+                        Spacer()
+                    }
                 }
+                Toggle(isOn: $performance) {
+                    HStack {
+                        Text("Performance Mode")
+                        Image(systemName: "info.circle")
+                            .foregroundColor(.accentColor)
+                            .onTapGesture {
+                                performanceInfoAlert = true
+                            }
+                            .alert("Performance mode removes shadows and some graphical effects to reduce battery usage.", isPresented: $performanceInfoAlert) {
+                                Button("OK", role: .cancel) {}
+                            }
+                        Spacer()
+                    }
+                }
+                Toggle(biometryToggleLabel, isOn: $biometry)
+                    .onChange(of: biometry, perform: authenticate)
+                    .alert("\(SettingsView.authenticationType()) is not set up on your device.", isPresented: $biometryMissingAlert) {
+                        Button("OK", role: .cancel) {}
+                    }
+                    .alert("Your device does not support biometric authentication.", isPresented: $biometryUnsupportedAlert) {
+                        Button("OK", role: .cancel) {}
+                    }
             }
-            Toggle(isOn: $performance) {
-                HStack {
-                    Text("Performance Mode")
-                    Image(systemName: "info.circle")
-                        .foregroundColor(.accentColor)
-                        .onTapGesture {
-                            performanceInfoAlert = true
-                        }
-                        .alert("Performance mode removes shadows and graphical effects to reduce battery usage.", isPresented: $performanceInfoAlert) {
-                            Button("OK", role: .cancel) {}
-                        }
-                    Spacer()
+            Section {
+                NavigationLink {
+                    AboutView()
+                } label: {
+                    Text("About")
                 }
-            }
-            Toggle(biometryToggleLabel, isOn: $biometry)
-                .onChange(of: biometry, perform: authenticate)
-                .alert("\(SettingsView.authenticationType()) is not set up on your device.", isPresented: $biometryMissingAlert) {
-                    Button("OK", role: .cancel) {}
+                NavigationLink {
+                    DonateView()
+                } label: {
+                    Text("Donate")
                 }
-                .alert("Your device does not support biometric authentication.", isPresented: $biometryUnsupportedAlert) {
-                    Button("OK", role: .cancel) {}
-                }
-            NavigationLink {
-                AboutView()
-            } label: {
-                Text("About")
             }
         }
         .toolbar {

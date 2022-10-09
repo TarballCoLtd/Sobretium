@@ -29,6 +29,7 @@
 		1CB54DC228EA6E0900CDE2A4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB54DC128EA6E0900CDE2A4 /* Theme.swift */; };
 		1CB54DC428EA7E6400CDE2A4 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB54DC328EA7E6400CDE2A4 /* ThemePicker.swift */; };
 		1CB54DC628EA8BD300CDE2A4 /* ThemeSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB54DC528EA8BD300CDE2A4 /* ThemeSample.swift */; };
+		1CB811DA28F09310008A85CC /* DonateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB811D928F09310008A85CC /* DonateView.swift */; };
 		1CE8FC7328D3965800940E07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8FC7228D3965800940E07 /* SettingsView.swift */; };
 		1CF24EB828D0F35C000E75A5 /* NewTimerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */; };
 		1CF24EB928D0F35C000E75A5 /* SobrietyRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */; };
@@ -101,6 +102,8 @@
 		1CB54DC128EA6E0900CDE2A4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		1CB54DC328EA7E6400CDE2A4 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		1CB54DC528EA8BD300CDE2A4 /* ThemeSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSample.swift; sourceTree = "<group>"; };
+		1CB811D928F09310008A85CC /* DonateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateView.swift; sourceTree = "<group>"; };
+		1CB811DE28F0A567008A85CC /* SobretiumStore.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = SobretiumStore.storekit; sourceTree = "<group>"; };
 		1CE8FC7228D3965800940E07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1CF24EB428D0F35C000E75A5 /* NewTimerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTimerSheet.swift; sourceTree = "<group>"; };
 		1CF24EB528D0F35C000E75A5 /* SobrietyRings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobrietyRings.swift; sourceTree = "<group>"; };
@@ -243,6 +246,7 @@
 			children = (
 				1CE8FC7228D3965800940E07 /* SettingsView.swift */,
 				1C9F35EF28E6144000C69CCB /* AboutView.swift */,
+				1CB811DB28F09709008A85CC /* Donation */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -254,6 +258,15 @@
 				1CA7E18F28EA15C2005E68A0 /* EditTrackerSheet.swift */,
 			);
 			path = Sheets;
+			sourceTree = "<group>";
+		};
+		1CB811DB28F09709008A85CC /* Donation */ = {
+			isa = PBXGroup;
+			children = (
+				1CB811D928F09310008A85CC /* DonateView.swift */,
+				1CB811DE28F0A567008A85CC /* SobretiumStore.storekit */,
+			);
+			path = Donation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CF24EBA28D0F35C000E75A5 /* Ring.swift in Sources */,
+				1CB811DA28F09310008A85CC /* DonateView.swift in Sources */,
 				1CE8FC7328D3965800940E07 /* SettingsView.swift in Sources */,
 				1C91B1E128D0F2E00062C18A /* ContentView.swift in Sources */,
 				1CF24EB828D0F35C000E75A5 /* NewTimerSheet.swift in Sources */,
@@ -421,7 +435,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "SobretiumWatch Watch App/SobretiumWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 116;
+				CURRENT_PROJECT_VERSION = 168;
 				DEVELOPMENT_ASSET_PATHS = "\"SobretiumWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -435,7 +449,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -455,7 +469,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "SobretiumWatch Watch App/SobretiumWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 116;
+				CURRENT_PROJECT_VERSION = 168;
 				DEVELOPMENT_ASSET_PATHS = "\"SobretiumWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -469,7 +483,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -603,7 +617,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 116;
+				CURRENT_PROJECT_VERSION = 168;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -625,7 +639,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -645,7 +659,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 116;
+				CURRENT_PROJECT_VERSION = 168;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -664,7 +678,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

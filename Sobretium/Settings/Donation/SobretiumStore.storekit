@@ -1,0 +1,65 @@
+{
+  "identifier" : "C9BBA401",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "1648938450",
+      "localizations" : [
+        {
+          "description" : "Optional donation to developer.",
+          "displayName" : "Donation to Developer",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.alyxferrari.Sobretium.donation1",
+      "referenceName" : "1 Dollar Donation",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "1648955927",
+      "localizations" : [
+        {
+          "description" : "Optional donation to developer.",
+          "displayName" : "Donation to Developer",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.alyxferrari.Sobretium.donation10",
+      "referenceName" : "10 Dollar Donation",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "1648946735",
+      "localizations" : [
+        {
+          "description" : "Optional donation to developer.",
+          "displayName" : "Donation to Developer",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.alyxferrari.Sobretium.donation5",
+      "referenceName" : "5 Dollar Donation",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6443629519",
+    "_developerTeamID" : "W8C8UQ95CG",
+    "_lastSynchronizedDate" : 686866716.96929097
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}
