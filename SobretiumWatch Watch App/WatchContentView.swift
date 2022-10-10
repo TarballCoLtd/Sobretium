@@ -14,17 +14,26 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             if authenticated {
-                List {
-                    ForEach(entries) { entry in
-                        if entry.startDate != nil && entry.name != nil {
-                            NavigationLink(tag: entry.name!, selection: $linkSelection) {
-                                SobrietyRings(entry)
-                                    .padding(.top)
-                            } label: {
-                                Text(entry.name!)
+                if entries.count == 0 {
+                    VStack {
+                        Text("No Saved Trackers")
+                            .font(.title)
+                        Text("Press the + button to get started")
+                    }
+                } else {
+                    List {
+                        ForEach(entries) { entry in
+                            if entry.startDate != nil && entry.name != nil {
+                                NavigationLink(tag: entry.name!, selection: $linkSelection) {
+                                    SobrietyRings(entry)
+                                        .padding(.top)
+                                } label: {
+                                    Text(entry.name!)
+                                }
                             }
                         }
                     }
+                    .navigationTitle("Sobretium")
                 }
             }
         }
