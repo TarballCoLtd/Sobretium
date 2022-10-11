@@ -35,6 +35,7 @@ struct DonateView: View {
                 Text("However, if you'd like to support development of the app, you may do so here.")
             }
             .multilineTextAlignment(.center)
+            .fixedSize(horizontal: false, vertical: true)
             .padding(.horizontal, 5)
             Spacer()
                 .frame(maxWidth: 100, maxHeight: 100)
