@@ -19,7 +19,13 @@ struct NewTimerSheet: View {
     var body: some View {
         NavigationView {
             List {
-                DatePicker("Start Date", selection: $startDate, displayedComponents: [.date, .hourAndMinute])
+                VStack {
+                    HStack {
+                        Text("Start Date")
+                        Spacer()
+                    }
+                    DatePicker("", selection: $startDate, displayedComponents: [.date, .hourAndMinute])
+                }
                 TextField(stealth ? "Tracker name" : "Addiction name", text: $name)
                 Toggle(isOn: $defaultEntry) {
                     HStack {

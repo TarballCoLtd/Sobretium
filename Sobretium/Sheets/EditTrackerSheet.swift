@@ -41,7 +41,13 @@ struct EditTrackerSheet: View {
                     Divider()
                     TextField(stealth ? "Tracker name" : "Addiction name", text: $name)
                 }
-                DatePicker("Start Date", selection: $pickerDate, displayedComponents: [.date, .hourAndMinute])
+                VStack {
+                    HStack {
+                        Text("Start Date")
+                        Spacer()
+                    }
+                    DatePicker("", selection: $pickerDate, displayedComponents: [.date, .hourAndMinute])
+                }
                 HStack {
                     Text("Subtitle")
                     Divider()
