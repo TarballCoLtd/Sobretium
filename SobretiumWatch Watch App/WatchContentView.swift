@@ -18,7 +18,7 @@ struct ContentView: View {
                     VStack {
                         Text("No Saved Trackers")
                             .font(.title)
-                        Text("Press the + button to get started")
+                        Text("Open the app on your iPhone to get started")
                     }
                 } else {
                     List {
