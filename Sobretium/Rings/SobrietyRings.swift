@@ -47,7 +47,7 @@ struct SobrietyRings: View {
                         .frame(width: geometry.size.width - (Ring.tinyLineWidth * 2.0), height: geometry.size.height - (Ring.tinyLineWidth * 2.0))
                 } else {
                     VStack {
-                        Text(String(Int(entry.startDate!.daysAgo)))
+                        Text(entry.startDate!.daysAgoStringTruncated)
                             .font(.system(size: geometry.size.width * 0.19 - 40))
                         Text(entry.startDate!.daysAgo == 1 ? "Day" : "Days")
                     }
@@ -106,6 +106,12 @@ extension Date {
     var daysAgo: Float {
         let divisor: Float = 60 * 60 * 24
         return Float(Date().timeIntervalSince(self)) / divisor
+    }
+    var daysAgoAbs: Float {
+        return self.daysAgo < 0 ? 0 : self.daysAgo
+    }
+    var daysAgoStringTruncated: String {
+        return String(Int(self.daysAgoAbs))
     }
     var monthsAgo: Float {
         let divisor: Float = 60 * 60 * 24 * 31

@@ -12,12 +12,13 @@
 		1C229D3628EF5241006583DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C229D3528EF5241006583DF /* Assets.xcassets */; };
 		1C229D3928EF5241006583DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C229D3828EF5241006583DF /* Preview Assets.xcassets */; };
 		1C229D3C28EF5241006583DF /* SobretiumWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1C229D2F28EF523D006583DF /* SobretiumWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		1C229D4328EF557C006583DF /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CB48A28E742A900215648 /* DataController.swift */; };
 		1C229D4428EF559C006583DF /* SobrietyEntry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C37802C28E7579100440E06 /* SobrietyEntry.xcdatamodeld */; };
 		1C2CB48B28E742A900215648 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CB48A28E742A900215648 /* DataController.swift */; };
 		1C37802F28E7579100440E06 /* SobrietyEntry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C37802C28E7579100440E06 /* SobrietyEntry.xcdatamodeld */; };
 		1C37803228E765BD00440E06 /* AppIconRings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37803128E765BD00440E06 /* AppIconRings.swift */; };
 		1C5F922528D2522300BE053D /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F922428D2522300BE053D /* RingView.swift */; };
+		1C81C2AF28F733B4007F87AF /* SobrietyEntryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81C2AE28F733B4007F87AF /* SobrietyEntryLabel.swift */; };
+		1C81C2B128F73742007F87AF /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CB48A28E742A900215648 /* DataController.swift */; };
 		1C91B1DF28D0F2E00062C18A /* SobretiumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */; };
 		1C91B1E128D0F2E00062C18A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91B1E028D0F2E00062C18A /* ContentView.swift */; };
 		1C91B1E328D0F2E30062C18A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C91B1E228D0F2E30062C18A /* Assets.xcassets */; };
@@ -92,6 +93,7 @@
 		1C50F1A628ECF42800AD9025 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1C50F1A828ECF42800AD9025 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		1C5F922428D2522300BE053D /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+		1C81C2AE28F733B4007F87AF /* SobrietyEntryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobrietyEntryLabel.swift; sourceTree = "<group>"; };
 		1C91B1DB28D0F2E00062C18A /* Sobretium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sobretium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobretiumApp.swift; sourceTree = "<group>"; };
 		1C91B1E028D0F2E00062C18A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -193,6 +195,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1C81C2AD28F73332007F87AF /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				1C91B1E028D0F2E00062C18A /* ContentView.swift */,
+				1C81C2AE28F733B4007F87AF /* SobrietyEntryLabel.swift */,
+			);
+			path = "Main View";
+			sourceTree = "<group>";
+		};
+		1C81C2B028F7370B007F87AF /* Entrypoint */ = {
+			isa = PBXGroup;
+			children = (
+				1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */,
+				1C2CB48A28E742A900215648 /* DataController.swift */,
+			);
+			path = Entrypoint;
+			sourceTree = "<group>";
+		};
 		1C91B1D228D0F2E00062C18A = {
 			isa = PBXGroup;
 			children = (
@@ -218,9 +238,8 @@
 			children = (
 				1C229D2928EF50C0006583DF /* Info.plist */,
 				1C229D2828EF50A8006583DF /* Sobretium.entitlements */,
-				1C2CB48A28E742A900215648 /* DataController.swift */,
-				1C91B1DE28D0F2E00062C18A /* SobretiumApp.swift */,
-				1C91B1E028D0F2E00062C18A /* ContentView.swift */,
+				1C81C2B028F7370B007F87AF /* Entrypoint */,
+				1C81C2AD28F73332007F87AF /* Main View */,
 				1C0E2E1928ECA9DB0063DB58 /* Themes */,
 				1C0E2E1828ECA9A20063DB58 /* Rings */,
 				1CA7E19128EA15CC005E68A0 /* Sheets */,
@@ -383,11 +402,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C81C2B128F73742007F87AF /* DataController.swift in Sources */,
 				1CFF14D428EFAFE40022BAD6 /* WatchSobrietyRings.swift in Sources */,
 				1C229D3428EF523D006583DF /* WatchContentView.swift in Sources */,
 				1C229D4428EF559C006583DF /* SobrietyEntry.xcdatamodeld in Sources */,
 				1CFF14CE28EFAEAC0022BAD6 /* WatchRing.swift in Sources */,
-				1C229D4328EF557C006583DF /* DataController.swift in Sources */,
 				1C229D3228EF523D006583DF /* SobretiumWatchApp.swift in Sources */,
 				1CFF14D528EFB0B90022BAD6 /* Theme.swift in Sources */,
 			);
@@ -402,6 +421,7 @@
 				1CE8FC7328D3965800940E07 /* SettingsView.swift in Sources */,
 				1C91B1E128D0F2E00062C18A /* ContentView.swift in Sources */,
 				1CF24EB828D0F35C000E75A5 /* NewTimerSheet.swift in Sources */,
+				1C81C2AF28F733B4007F87AF /* SobrietyEntryLabel.swift in Sources */,
 				1CB54DC228EA6E0900CDE2A4 /* Theme.swift in Sources */,
 				1C9F35F028E6144000C69CCB /* AboutView.swift in Sources */,
 				1C2CB48B28E742A900215648 /* DataController.swift in Sources */,
@@ -617,7 +637,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 183;
+				CURRENT_PROJECT_VERSION = 195;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -659,7 +679,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 183;
+				CURRENT_PROJECT_VERSION = 195;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
