@@ -26,7 +26,7 @@ struct NewTimerSheet: View {
                     }
                     DatePicker("", selection: $startDate, displayedComponents: [.date, .hourAndMinute])
                 }
-                TextField(stealth ? "Tracker name" : "Addiction name", text: $name)
+                TextField("Tracker name", text: $name)
                 Toggle(isOn: $defaultEntry) {
                     HStack {
                         Text(stealth ? "Default Tracker" : "Default Sobriety Tracker")
