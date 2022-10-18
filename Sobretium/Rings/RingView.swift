@@ -14,12 +14,20 @@ struct RingView: View {
     @State var entry: SobrietyEntry
     @State var editTrackerSheetPresented: Bool = false
     @State var resetDateAlertPresented: Bool = false
+    let gradient = LinearGradient(gradient: Gradient(colors: [.accentColor, .cyan, .accentColor]), startPoint: .leading, endPoint: .trailing)
     init(_ entry: SobrietyEntry) {
         self._entry = State(initialValue: entry)
     }
     var body: some View {
         VStack {
             Text(entry.subtitle ?? "I've been \(entry.name!.lowercased()) free for")
+                .frame(minWidth: 0, minHeight: 0)
+                .padding(.vertical, 5)
+                .padding(.horizontal, 15)
+                .overlay {
+                    Capsule()
+                        .stroke(gradient, lineWidth: 1)
+                }
             SobrietyRings(false, entry, ringType)
         }
         .toolbar {

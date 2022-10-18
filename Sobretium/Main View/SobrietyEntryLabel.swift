@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SobrietyEntryLabel: View {
     @State var entry: SobrietyEntry
+    let gradient = LinearGradient(gradient: Gradient(colors: [.accentColor, .cyan, .accentColor]), startPoint: .leading, endPoint: .trailing)
     init(_ entry: SobrietyEntry) {
         self._entry = State(initialValue: entry)
     }
@@ -18,10 +19,11 @@ struct SobrietyEntryLabel: View {
             Spacer()
             Text(entry.startDate!.daysAgoString)
                 .frame(minWidth: 0, minHeight: 0)
-                .padding(5)
+                .padding(.vertical, 5)
+                .padding(.horizontal, 15)
                 .overlay {
                     Capsule()
-                        .stroke(Color.accentColor, lineWidth: 1)
+                        .stroke(gradient, lineWidth: 1)
                 }
         }
     }
