@@ -15,6 +15,7 @@ struct NewTimerSheet: View {
     @State var name = ""
     @State var defaultEntry: Bool = false
     @State var defaultInfoAlert: Bool = false
+    @State var themeIndex: Int = 0
     @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
     var body: some View {
         NavigationView {
@@ -27,6 +28,19 @@ struct NewTimerSheet: View {
                     DatePicker("", selection: $startDate, displayedComponents: [.date, .hourAndMinute])
                 }
                 TextField("Tracker name", text: $name)
+                NavigationLink {
+                    ThemePicker($themeIndex)
+                } label: {
+                    HStack {
+                        Text("Theme")
+                        Spacer()
+                        if themeIndex > Theme.themes.count - 1 {
+                            Text(Theme.prideThemes[Int(themeIndex) - Theme.themes.count].name)
+                        } else {
+                            Text(Theme.themes[Int(themeIndex)].name)
+                        }
+                    }
+                }
                 Toggle(isOn: $defaultEntry) {
                     HStack {
                         Text(stealth ? "Default Tracker" : "Default Sobriety Tracker")
@@ -65,6 +79,7 @@ struct NewTimerSheet: View {
                             }
                         }
                         entry.defaultEntry = defaultEntry
+                        entry.themeIndex = Int32(themeIndex)
                         try? moc.save()
                         presentation.wrappedValue.dismiss()
                     }
