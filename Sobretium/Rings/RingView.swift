@@ -67,5 +67,9 @@ struct RingView: View {
                 try? moc.save()
             }
         }
+        .onAppear {
+            entry.lastView = Date()
+            try? moc.save()
+        }
     }
 }

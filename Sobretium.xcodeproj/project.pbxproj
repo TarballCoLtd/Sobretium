@@ -23,6 +23,7 @@
 		1C91B1E128D0F2E00062C18A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91B1E028D0F2E00062C18A /* ContentView.swift */; };
 		1C91B1E328D0F2E30062C18A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C91B1E228D0F2E30062C18A /* Assets.xcassets */; };
 		1C91B1E628D0F2E30062C18A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C91B1E528D0F2E30062C18A /* Preview Assets.xcassets */; };
+		1C98187928FF246C00FF68BD /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 1C98187828FF246C00FF68BD /* PopupView */; };
 		1C9F35EA28E60A3300C69CCB /* PathText in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F35E928E60A3300C69CCB /* PathText */; };
 		1C9F35ED28E60A6300C69CCB /* Time in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F35EC28E60A6300C69CCB /* Time */; };
 		1C9F35F028E6144000C69CCB /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F35EF28E6144000C69CCB /* AboutView.swift */; };
@@ -127,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C98187928FF246C00FF68BD /* PopupView in Frameworks */,
 				1C9F35EA28E60A3300C69CCB /* PathText in Frameworks */,
 				1C9F35ED28E60A6300C69CCB /* Time in Frameworks */,
 			);
@@ -330,6 +332,7 @@
 			packageProductDependencies = (
 				1C9F35E928E60A3300C69CCB /* PathText */,
 				1C9F35EC28E60A6300C69CCB /* Time */,
+				1C98187828FF246C00FF68BD /* PopupView */,
 			);
 			productName = Sobretium;
 			productReference = 1C91B1DB28D0F2E00062C18A /* Sobretium.app */;
@@ -365,6 +368,7 @@
 			packageReferences = (
 				1C9F35E828E60A3300C69CCB /* XCRemoteSwiftPackageReference "CurvyText" */,
 				1C9F35EB28E60A6300C69CCB /* XCRemoteSwiftPackageReference "time" */,
+				1C98187728FF246C00FF68BD /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = 1C91B1DC28D0F2E00062C18A /* Products */;
 			projectDirPath = "";
@@ -637,7 +641,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 219;
+				CURRENT_PROJECT_VERSION = 221;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -659,7 +663,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -679,7 +683,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 219;
+				CURRENT_PROJECT_VERSION = 221;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -698,7 +702,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alyxferrari.Sobretium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -743,6 +747,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1C98187728FF246C00FF68BD /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		1C9F35E828E60A3300C69CCB /* XCRemoteSwiftPackageReference "CurvyText" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alyxferrari/CurvyText";
@@ -762,6 +774,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1C98187828FF246C00FF68BD /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C98187728FF246C00FF68BD /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
 		1C9F35E928E60A3300C69CCB /* PathText */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1C9F35E828E60A3300C69CCB /* XCRemoteSwiftPackageReference "CurvyText" */;
