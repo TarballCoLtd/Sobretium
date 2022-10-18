@@ -24,6 +24,7 @@ struct RingView: View {
                 .frame(minWidth: 0, minHeight: 0)
                 .padding(.vertical, 5)
                 .padding(.horizontal, 15)
+                .multilineTextAlignment(.center)
                 .overlay {
                     Capsule()
                         .stroke(gradient, lineWidth: 1)
