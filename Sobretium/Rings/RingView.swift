@@ -64,8 +64,15 @@ struct RingView: View {
             Button("Cancel", role: .cancel) {}
             Button("Yes", role: .destructive) {
                 entry.startDate = Date()
+                if entry.streaks != nil {
+                    entry.streaks!.append(Date())
+                }
                 try? moc.save()
             }
+        }
+        .onAppear {
+            entry.lastView = Date()
+            try? moc.save()
         }
     }
 }

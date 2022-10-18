@@ -3,8 +3,10 @@
     <entity name="SobrietyEntry" representedClassName="SobrietyEntry" syncable="YES" codeGenerationType="class">
         <attribute name="defaultEntry" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastView" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="streaks" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[Date]"/>
         <attribute name="subtitle" optional="YES" attributeType="String"/>
         <attribute name="themeIndex" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
