@@ -42,7 +42,7 @@ struct ContentView: View {
                                         NavigationLink(tag: entry.name!, selection: $linkSelection) {
                                             RingView(entry)
                                         } label: {
-                                            Text(entry.name!)
+                                            SobrietyEntryLabel(entry)
                                         }
                                         .swipeActions {
                                             Button {
