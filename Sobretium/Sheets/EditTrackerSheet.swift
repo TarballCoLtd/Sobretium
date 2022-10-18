@@ -16,22 +16,16 @@ struct EditTrackerSheet: View {
     @State var name: String
     @State var pickerDate: Date
     @State var subtitle: String
-    @State var currentTheme: String
+    @State var themeIndex: Int
     @State var defaultEntry: Bool
     @State var defaultInfoAlert: Bool = false
-    let initialTheme: Int32
     init(_ entry: SobrietyEntry) {
         self._entry = State(initialValue: entry)
         self._name = State(initialValue: entry.name!)
         self._pickerDate = State(initialValue: entry.startDate!)
         self._subtitle = State(initialValue: entry.subtitle ?? "")
         self._defaultEntry = State(initialValue: entry.defaultEntry)
-        if entry.themeIndex > Theme.themes.count - 1 {
-            self._currentTheme = State(initialValue: Theme.prideThemes[Int(entry.themeIndex) - Theme.themes.count].name)
-        } else {
-            self._currentTheme = State(initialValue: Theme.themes[Int(entry.themeIndex)].name)
-        }
-        initialTheme = entry.themeIndex
+        self._themeIndex = State(initialValue: Int(entry.themeIndex))
     }
     var body: some View {
         NavigationView {
@@ -54,18 +48,15 @@ struct EditTrackerSheet: View {
                     TextField("I've been \(name.count == 0 ? "..." : name.lowercased()) free for", text: $subtitle)
                 }
                 NavigationLink {
-                    ThemePicker(entry)
+                    ThemePicker($themeIndex)
                 } label: {
                     HStack {
                         Text("Theme")
                         Spacer()
-                        Text(currentTheme)
-                    }
-                    .onAppear {
-                        if entry.themeIndex > Theme.themes.count - 1 {
-                            currentTheme = Theme.prideThemes[Int(entry.themeIndex) - Theme.themes.count].name
+                        if themeIndex > Theme.themes.count - 1 {
+                            Text(Theme.prideThemes[Int(themeIndex) - Theme.themes.count].name)
                         } else {
-                            currentTheme = Theme.themes[Int(entry.themeIndex)].name
+                            Text(Theme.themes[Int(themeIndex)].name)
                         }
                     }
                 }
@@ -87,7 +78,6 @@ struct EditTrackerSheet: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
-                        entry.themeIndex = initialTheme
                         presentation.wrappedValue.dismiss()
                     }
                 }
@@ -110,6 +100,7 @@ struct EditTrackerSheet: View {
                                 entry.defaultEntry = false
                             }
                         }
+                        entry.themeIndex = Int32(themeIndex)
                         entry.defaultEntry = defaultEntry
                         try? moc.save()
                         presentation.wrappedValue.dismiss()
