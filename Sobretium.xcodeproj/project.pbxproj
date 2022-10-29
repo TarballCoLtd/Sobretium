@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		035E0CEE2908DE7E00F71A06 /* AppBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E0CED2908DE7E00F71A06 /* AppBanner.swift */; };
 		1C229D3228EF523D006583DF /* SobretiumWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C229D3128EF523D006583DF /* SobretiumWatchApp.swift */; };
 		1C229D3428EF523D006583DF /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C229D3328EF523D006583DF /* WatchContentView.swift */; };
 		1C229D3628EF5241006583DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C229D3528EF5241006583DF /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		035E0CED2908DE7E00F71A06 /* AppBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBanner.swift; sourceTree = "<group>"; };
 		1C229D2828EF50A8006583DF /* Sobretium.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sobretium.entitlements; sourceTree = "<group>"; };
 		1C229D2928EF50C0006583DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1C229D2A28EF5155006583DF /* SobretiumWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SobretiumWidgetExtension.entitlements; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				1C37803128E765BD00440E06 /* AppIconRings.swift */,
+				035E0CED2908DE7E00F71A06 /* AppBanner.swift */,
 			);
 			path = Development;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				1C37803228E765BD00440E06 /* AppIconRings.swift in Sources */,
 				1CB54DC428EA7E6400CDE2A4 /* ThemePicker.swift in Sources */,
 				1CB54DC628EA8BD300CDE2A4 /* ThemeSample.swift in Sources */,
+				035E0CEE2908DE7E00F71A06 /* AppBanner.swift in Sources */,
 				1CA7E19028EA15C2005E68A0 /* EditTrackerSheet.swift in Sources */,
 				1C37802F28E7579100440E06 /* SobrietyEntry.xcdatamodeld in Sources */,
 				1C5F922528D2522300BE053D /* RingView.swift in Sources */,
@@ -671,7 +675,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -710,7 +714,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
