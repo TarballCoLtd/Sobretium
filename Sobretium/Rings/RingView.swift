@@ -29,7 +29,7 @@ struct RingView: View {
                     Capsule()
                         .stroke(gradient, lineWidth: 1)
                 }
-            SobrietyRings(false, entry, ringType)
+            SobrietyRings(entry, ringType)
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
