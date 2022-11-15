@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WhatsNewKit
 
 @main
 struct SobretiumApp: App {
@@ -14,6 +15,16 @@ struct SobretiumApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environment(\.whatsNew, WhatsNewEnvironment(versionStore: UserDefaultsWhatsNewVersionStore(), whatsNewCollection: self))
         }
+    }
+}
+
+extension SobretiumApp: WhatsNewCollectionProvider {
+    var whatsNewCollection: WhatsNewCollection {
+        WhatsNew(
+            version: "1.0.6",
+            title: .init(text: .init("What's New in " + AttributedString("Sobretium", attributes: .foregroundColor(.red)))),
+        )
     }
 }
