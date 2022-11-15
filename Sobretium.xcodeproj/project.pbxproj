@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		035E0CEE2908DE7E00F71A06 /* AppBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E0CED2908DE7E00F71A06 /* AppBanner.swift */; };
+		03A94CF6292427780084C8F3 /* WhatsNewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 03A94CF5292427780084C8F3 /* WhatsNewKit */; };
 		1C229D3228EF523D006583DF /* SobretiumWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C229D3128EF523D006583DF /* SobretiumWatchApp.swift */; };
 		1C229D3428EF523D006583DF /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C229D3328EF523D006583DF /* WatchContentView.swift */; };
 		1C229D3628EF5241006583DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C229D3528EF5241006583DF /* Assets.xcassets */; };
@@ -130,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03A94CF6292427780084C8F3 /* WhatsNewKit in Frameworks */,
 				1C98187928FF246C00FF68BD /* PopupView in Frameworks */,
 				1C9F35EA28E60A3300C69CCB /* PathText in Frameworks */,
 				1C9F35ED28E60A6300C69CCB /* Time in Frameworks */,
@@ -336,6 +338,7 @@
 				1C9F35E928E60A3300C69CCB /* PathText */,
 				1C9F35EC28E60A6300C69CCB /* Time */,
 				1C98187828FF246C00FF68BD /* PopupView */,
+				03A94CF5292427780084C8F3 /* WhatsNewKit */,
 			);
 			productName = Sobretium;
 			productReference = 1C91B1DB28D0F2E00062C18A /* Sobretium.app */;
@@ -372,6 +375,7 @@
 				1C9F35E828E60A3300C69CCB /* XCRemoteSwiftPackageReference "CurvyText" */,
 				1C9F35EB28E60A6300C69CCB /* XCRemoteSwiftPackageReference "time" */,
 				1C98187728FF246C00FF68BD /* XCRemoteSwiftPackageReference "PopupView" */,
+				03A94CF4292427780084C8F3 /* XCRemoteSwiftPackageReference "WhatsNewKit" */,
 			);
 			productRefGroup = 1C91B1DC28D0F2E00062C18A /* Products */;
 			projectDirPath = "";
@@ -463,7 +467,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "SobretiumWatch Watch App/SobretiumWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 225;
+				CURRENT_PROJECT_VERSION = 226;
 				DEVELOPMENT_ASSET_PATHS = "\"SobretiumWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -497,7 +501,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "SobretiumWatch Watch App/SobretiumWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 225;
+				CURRENT_PROJECT_VERSION = 226;
 				DEVELOPMENT_ASSET_PATHS = "\"SobretiumWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -645,7 +649,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 232;
+				CURRENT_PROJECT_VERSION = 233;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -687,7 +691,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sobretium/Sobretium.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 232;
+				CURRENT_PROJECT_VERSION = 233;
 				DEVELOPMENT_ASSET_PATHS = "\"Sobretium/Preview Content\"";
 				DEVELOPMENT_TEAM = W8C8UQ95CG;
 				ENABLE_PREVIEWS = YES;
@@ -751,6 +755,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		03A94CF4292427780084C8F3 /* XCRemoteSwiftPackageReference "WhatsNewKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/WhatsNewKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		1C98187728FF246C00FF68BD /* XCRemoteSwiftPackageReference "PopupView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/PopupView";
@@ -778,6 +790,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		03A94CF5292427780084C8F3 /* WhatsNewKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03A94CF4292427780084C8F3 /* XCRemoteSwiftPackageReference "WhatsNewKit" */;
+			productName = WhatsNewKit;
+		};
 		1C98187828FF246C00FF68BD /* PopupView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1C98187728FF246C00FF68BD /* XCRemoteSwiftPackageReference "PopupView" */;

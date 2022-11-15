@@ -20,6 +20,9 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @State var authenticated: Bool = false
     @State var linkSelection: String?
+    #if DEBUG
+    @State var whatsNewSheetPresented: Bool = false
+    #endif
     var updateListenerTask: Task<Void, Error>? = nil
     init() {
         updateListenerTask = listenForTransactions()
@@ -36,6 +39,14 @@ struct ContentView: View {
                         }
                     } else {
                         List {
+                            #if DEBUG
+                            Section(header: Text("Debug")) {
+                                Button("Display What's New Dialog") {
+                                    whatsNewSheetPresented = true
+                                }
+                                .sheet(isPresented: $whatsNewSheetPresented)
+                            }
+                            #endif
                             Section(header: Text(stealth ? "Trackers" : "Sobriety Trackers")) {
                                 ForEach(entries) { entry in
                                     if entry.startDate != nil && entry.name != nil {
