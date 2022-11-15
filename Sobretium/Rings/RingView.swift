@@ -11,12 +11,12 @@ struct RingView: View {
     @Environment(\.presentationMode) var presentation
     @Environment(\.managedObjectContext) var moc
     @AppStorage("ringType") var ringType: Bool = false
-    @State var entry: SobrietyEntry
+    @ObservedObject var entry: SobrietyEntry
     @State var editTrackerSheetPresented: Bool = false
     @State var resetDateAlertPresented: Bool = false
     let gradient = LinearGradient(gradient: Gradient(colors: [.accentColor, .cyan, .accentColor]), startPoint: .leading, endPoint: .trailing)
     init(_ entry: SobrietyEntry) {
-        self._entry = State(initialValue: entry)
+        self._entry = ObservedObject(initialValue: entry)
     }
     var body: some View {
         VStack {

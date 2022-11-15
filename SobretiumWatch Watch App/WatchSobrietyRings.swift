@@ -17,11 +17,11 @@ struct SobrietyRings: View {
     @State var hours: Float = 0
     @State var days: Float = 0
     @State var months: Float = 0
-    @State var entry: SobrietyEntry
+    @ObservedObject var entry: SobrietyEntry
     @State var theme: Theme
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     init(_ entry: SobrietyEntry) {
-        self._entry = State(initialValue: entry)
+        self._entry = ObservedObject(initialValue: entry)
         if entry.themeIndex > Theme.themes.count - 1 {
             self._theme = State(initialValue: Theme.prideThemes[Int(entry.themeIndex) - Theme.themes.count])
         } else {

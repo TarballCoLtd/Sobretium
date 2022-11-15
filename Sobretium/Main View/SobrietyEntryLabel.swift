@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SobrietyEntryLabel: View {
-    @State var entry: SobrietyEntry
+    @ObservedObject var entry: SobrietyEntry
     let gradient = LinearGradient(gradient: Gradient(colors: [.accentColor, .cyan, .accentColor]), startPoint: .leading, endPoint: .trailing)
     init(_ entry: SobrietyEntry) {
-        self._entry = State(initialValue: entry)
+        self._entry = ObservedObject(initialValue: entry)
     }
     var body: some View {
         HStack {

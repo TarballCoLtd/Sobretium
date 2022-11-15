@@ -25,13 +25,13 @@ struct SobrietyRings: View {
     @State var yearsText: String = ""
     @State var decadesText: String = ""
     //@State var tiny: Bool = false
-    @State var entry: SobrietyEntry
+    @ObservedObject var entry: SobrietyEntry
     @State var type: Bool
     @State var theme: Theme
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     init(_ entry: SobrietyEntry, _ type: Bool) {
         //self._tiny = State(initialValue: tiny)
-        self._entry = State(initialValue: entry)
+        self._entry = ObservedObject(initialValue: entry)
         self._type = State(initialValue: type)
         if entry.themeIndex > Theme.themes.count - 1 {
             self._theme = State(initialValue: Theme.prideThemes[Int(entry.themeIndex) - Theme.themes.count])
