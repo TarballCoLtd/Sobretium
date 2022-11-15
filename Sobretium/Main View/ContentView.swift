@@ -7,21 +7,23 @@
 
 import SwiftUI
 import LocalAuthentication
+import WhatsNewKit
 
 struct ContentView: View {
     @AppStorage("stealth") var stealth: Bool = false
     @AppStorage("biometry") var biometry: Bool = false
     @AppStorage("launchCount") var launchCount: Int = 0
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.whatsNew) var whatsNewEnvironment
+    @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
     @State var addTrackerSheetPresented: Bool = false
     @State var editTrackerSheetPresented: Bool = false
-    @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
     @State var deletionCandidate: SobrietyEntry?
     @State var deletionAlertPresented: Bool = false
-    @Environment(\.managedObjectContext) var moc
     @State var authenticated: Bool = false
     @State var linkSelection: String?
     #if DEBUG
-    @State var whatsNewSheetPresented: Bool = false
+    @State var whatsNew: WhatsNew?
     #endif
     var updateListenerTask: Task<Void, Error>? = nil
     init() {
@@ -41,10 +43,10 @@ struct ContentView: View {
                         List {
                             #if DEBUG
                             Section(header: Text("Debug")) {
-                                Button("Display What's New Dialog") {
-                                    whatsNewSheetPresented = true
+                                Button("Present 'What's New' Sheet") {
+                                    whatsNew = whatsNewEnvironment.whatsNewCollection.last!
                                 }
-                                .sheet(isPresented: $whatsNewSheetPresented)
+                                .sheet(whatsNew: $whatsNew)
                             }
                             #endif
                             Section(header: Text(stealth ? "Trackers" : "Sobriety Trackers")) {
@@ -121,6 +123,7 @@ struct ContentView: View {
                         deletionAlertPresented = false
                     }
                 }
+                .whatsNewSheet()
             }
         }
         .onAppear(perform: authenticate)
