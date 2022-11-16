@@ -16,14 +16,12 @@ struct SobrietyRings: View {
     @State var days: Float = 0
     @State var months: Float = 0
     @State var years: Float = 0
-    @State var decades: Float = 0
     @State var secondsText: String = ""
     @State var minutesText: String = ""
     @State var hoursText: String = ""
     @State var daysText: String = ""
     @State var monthsText: String = ""
     @State var yearsText: String = ""
-    @State var decadesText: String = ""
     //@State var tiny: Bool = false
     @ObservedObject var entry: SobrietyEntry
     @State var type: Bool
@@ -141,10 +139,6 @@ extension Date {
         let divisor: Float = 60 * 60 * 24 * 365
         return Float(Date().timeIntervalSince(self)) / divisor
     }
-    var decadesAgo: Float {
-        let divisor: Float = 60 * 60 * 24 * 365 * 10
-        return Float(Date().timeIntervalSince(self)) / divisor
-    }
     var secondsAgoAlt: Float {
         let diff = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self, to: Date())
         return Float(diff.second ?? 0)
@@ -167,9 +161,6 @@ extension Date {
     }
     var yearsAgoAlt: Float {
         let diff = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self, to: Date())
-        return (Float(diff.year ?? 0) + (self.monthsAgoAlt / 12)).truncatingRemainder(dividingBy: 10)
-    }
-    var decadesAgoAlt: Float {
-        return decadesAgo
+        return (Float(diff.year ?? 0) + (self.monthsAgoAlt / 12))
     }
 }

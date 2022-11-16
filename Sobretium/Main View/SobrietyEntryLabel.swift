@@ -15,9 +15,9 @@ struct SobrietyEntryLabel: View {
     }
     var body: some View {
         HStack {
-            Text(entry.name!)
+            Text(entry.name ?? "Error")
             Spacer()
-            Text(entry.startDate!.daysAgoString)
+            Text((entry.startDate ?? Date()).daysAgoString)
                 .frame(minWidth: 0, minHeight: 0)
                 .padding(.vertical, 5)
                 .padding(.horizontal, 15)
