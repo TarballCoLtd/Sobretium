@@ -52,7 +52,7 @@ struct ContentView: View {
                             Section(header: Text(stealth ? "Trackers" : "Sobriety Trackers")) {
                                 ForEach(entries) { entry in
                                     if entry.startDate != nil && entry.name != nil {
-                                        NavigationLink(tag: entry.name!, selection: $linkSelection) {
+                                        NavigationLink(tag: entry.name ?? UUID().uuidString, selection: $linkSelection) {
                                             RingView(entry)
                                         } label: {
                                             SobrietyEntryLabel(entry)
@@ -156,7 +156,7 @@ struct ContentView: View {
         launchCount += 1
         for entry in entries {
             if entry.defaultEntry {
-                linkSelection = entry.name!
+                linkSelection = entry.name ?? UUID().uuidString
                 authenticated = true
                 return
             }

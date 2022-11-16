@@ -20,7 +20,7 @@ struct RingView: View {
     }
     var body: some View {
         VStack {
-            Text(entry.subtitle ?? "I've been \(entry.name!.lowercased()) free for")
+            Text(entry.subtitle ?? "I've been \((entry.name ?? "Error").lowercased()) free for")
                 .frame(minWidth: 0, minHeight: 0)
                 .padding(.vertical, 5)
                 .padding(.horizontal, 15)
@@ -33,7 +33,7 @@ struct RingView: View {
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text(entry.name!)
+                Text(entry.name ?? "Error")
                     .fixedSize(horizontal: true, vertical: false)
                     .font(.headline)
             }

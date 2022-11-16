@@ -24,11 +24,11 @@ struct ContentView: View {
                     List {
                         ForEach(entries) { entry in
                             if entry.startDate != nil && entry.name != nil {
-                                NavigationLink(tag: entry.name!, selection: $linkSelection) {
+                                NavigationLink(tag: entry.name ?? UUID().uuidString, selection: $linkSelection) {
                                     SobrietyRings(entry)
                                         .padding(.top)
                                 } label: {
-                                    Text(entry.name!)
+                                    Text(entry.name ?? "Error")
                                 }
                             }
                         }
@@ -42,7 +42,7 @@ struct ContentView: View {
     func showView() {
         for entry in entries {
             if entry.defaultEntry {
-                linkSelection = entry.name!
+                linkSelection = entry.name ?? UUID().uuidString
                 authenticated = true
                 return
             }
