@@ -7,17 +7,20 @@
 
 import SwiftUI
 import LocalAuthentication
+import WhatsNewKit
 
 struct SettingsView: View {
     @AppStorage("stealth") var stealth: Bool = false
     @AppStorage("performance") var performance: Bool = false
     @AppStorage("ringType") var ringType: Bool = false
     @AppStorage("biometry") var biometry: Bool = false
+    @Environment(\.whatsNew) var whatsNewEnvironment
     @State var biometryToggleLabel: String = "Enable \(SettingsView.authenticationType())"
     @State var biometryMissingAlert: Bool = false
     @State var biometryUnsupportedAlert: Bool = false
     @State var stealthInfoAlert: Bool = false
     @State var performanceInfoAlert: Bool = false
+    @State var whatsNew: WhatsNew?
     var body: some View {
         List {
             Section {
@@ -59,6 +62,10 @@ struct SettingsView: View {
                     }
             }
             Section {
+                Button("Present 'What's New' Sheet") {
+                    whatsNew = whatsNewEnvironment.whatsNewCollection.last!
+                }
+                .sheet(whatsNew: $whatsNew)
                 NavigationLink {
                     AboutView()
                 } label: {

@@ -7,19 +7,24 @@
 
 import SwiftUI
 import LocalAuthentication
+import WhatsNewKit
 
 struct ContentView: View {
     @AppStorage("stealth") var stealth: Bool = false
     @AppStorage("biometry") var biometry: Bool = false
     @AppStorage("launchCount") var launchCount: Int = 0
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.whatsNew) var whatsNewEnvironment
+    @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
     @State var addTrackerSheetPresented: Bool = false
     @State var editTrackerSheetPresented: Bool = false
-    @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
     @State var deletionCandidate: SobrietyEntry?
     @State var deletionAlertPresented: Bool = false
-    @Environment(\.managedObjectContext) var moc
     @State var authenticated: Bool = false
     @State var linkSelection: String?
+    #if DEBUG
+    @State var whatsNew: WhatsNew?
+    #endif
     var updateListenerTask: Task<Void, Error>? = nil
     init() {
         updateListenerTask = listenForTransactions()
@@ -36,10 +41,18 @@ struct ContentView: View {
                         }
                     } else {
                         List {
+                            #if DEBUG
+                            Section(header: Text("Debug")) {
+                                Button("Present 'What's New' Sheet") {
+                                    whatsNew = whatsNewEnvironment.whatsNewCollection.last!
+                                }
+                                .sheet(whatsNew: $whatsNew)
+                            }
+                            #endif
                             Section(header: Text(stealth ? "Trackers" : "Sobriety Trackers")) {
                                 ForEach(entries) { entry in
                                     if entry.startDate != nil && entry.name != nil {
-                                        NavigationLink(tag: entry.name!, selection: $linkSelection) {
+                                        NavigationLink(tag: entry.name ?? UUID().uuidString, selection: $linkSelection) {
                                             RingView(entry)
                                         } label: {
                                             SobrietyEntryLabel(entry)
@@ -110,6 +123,7 @@ struct ContentView: View {
                         deletionAlertPresented = false
                     }
                 }
+                .whatsNewSheet()
             }
         }
         .onAppear(perform: authenticate)
@@ -142,7 +156,7 @@ struct ContentView: View {
         launchCount += 1
         for entry in entries {
             if entry.defaultEntry {
-                linkSelection = entry.name!
+                linkSelection = entry.name ?? UUID().uuidString
                 authenticated = true
                 return
             }

@@ -26,6 +26,15 @@
         "branch" : "master",
         "revision" : "3237cc4a47c88a603b8148a95d40caf0859d3db7"
       }
+    },
+    {
+      "identity" : "whatsnewkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SvenTiigi/WhatsNewKit",
+      "state" : {
+        "revision" : "50a121a99a17c9eed90ccf1197ebd03165309c61",
+        "version" : "2.0.3"
+      }
     }
   ],
   "version" : 2

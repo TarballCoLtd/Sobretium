@@ -11,16 +11,16 @@ struct RingView: View {
     @Environment(\.presentationMode) var presentation
     @Environment(\.managedObjectContext) var moc
     @AppStorage("ringType") var ringType: Bool = false
-    @State var entry: SobrietyEntry
+    @ObservedObject var entry: SobrietyEntry
     @State var editTrackerSheetPresented: Bool = false
     @State var resetDateAlertPresented: Bool = false
     let gradient = LinearGradient(gradient: Gradient(colors: [.accentColor, .cyan, .accentColor]), startPoint: .leading, endPoint: .trailing)
     init(_ entry: SobrietyEntry) {
-        self._entry = State(initialValue: entry)
+        self._entry = ObservedObject(initialValue: entry)
     }
     var body: some View {
         VStack {
-            Text(entry.subtitle ?? "I've been \(entry.name!.lowercased()) free for")
+            Text(entry.subtitle ?? "I've been \((entry.name ?? "Error").lowercased()) free for")
                 .frame(minWidth: 0, minHeight: 0)
                 .padding(.vertical, 5)
                 .padding(.horizontal, 15)
@@ -29,11 +29,11 @@ struct RingView: View {
                     Capsule()
                         .stroke(gradient, lineWidth: 1)
                 }
-            SobrietyRings(false, entry, ringType)
+            SobrietyRings(entry, ringType)
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text(entry.name!)
+                Text(entry.name ?? "Error")
                     .fixedSize(horizontal: true, vertical: false)
                     .font(.headline)
             }

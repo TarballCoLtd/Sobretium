@@ -12,7 +12,7 @@ struct EditTrackerSheet: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
     @AppStorage("stealth") var stealth: Bool = false
-    @State var entry: SobrietyEntry
+    @ObservedObject var entry: SobrietyEntry
     @State var name: String
     @State var pickerDate: Date
     @State var subtitle: String
@@ -20,7 +20,7 @@ struct EditTrackerSheet: View {
     @State var defaultEntry: Bool
     @State var defaultInfoAlert: Bool = false
     init(_ entry: SobrietyEntry) {
-        self._entry = State(initialValue: entry)
+        self._entry = ObservedObject(initialValue: entry)
         self._name = State(initialValue: entry.name!)
         self._pickerDate = State(initialValue: entry.startDate!)
         self._subtitle = State(initialValue: entry.subtitle ?? "")
