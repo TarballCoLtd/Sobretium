@@ -10,6 +10,7 @@ import WhatsNewKit
 
 @main
 struct SobretiumApp: App {
+    @Environment(\.scenePhase) var phase
     @StateObject private var dataController = DataController()
     var body: some Scene {
         WindowGroup {
@@ -23,9 +24,14 @@ struct SobretiumApp: App {
 extension SobretiumApp: WhatsNewCollectionProvider {
     var whatsNewCollection: WhatsNewCollection {
         WhatsNew(
-            version: "1.0.6",
+            version: "1.0.7",
             title: .init(text: .init("What's New in " + AttributedString("Sobretium", attributes: .foregroundColor(.red)))),
             features: [
+                .init(
+                    image: .init(systemName: "eye.slash", foregroundColor: .cyan),
+                    title: "Privacy",
+                    subtitle: "App content will be blurred while the app is shown in the App Switcher, similar to banking apps."
+                ),
                 .init(
                     image: .init(systemName: "sparkles", foregroundColor: .yellow),
                     title: "Extended tracker length support",
@@ -40,7 +46,7 @@ extension SobretiumApp: WhatsNewCollectionProvider {
                     image: .init(systemName: "wand.and.stars.inverse", foregroundColor: .cyan),
                     title: "Bug Fixes",
                     subtitle: "In previous versions, length summaries for each tracker on the tracker list didn't update until the app reloaded. This has been fixed."
-                )
+                ),
             ]
         )
     }

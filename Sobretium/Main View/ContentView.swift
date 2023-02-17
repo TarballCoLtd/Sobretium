@@ -14,6 +14,7 @@ struct ContentView: View {
     @AppStorage("biometry") var biometry: Bool = false
     @AppStorage("launchCount") var launchCount: Int = 0
     @Environment(\.managedObjectContext) var moc
+    @Environment(\.scenePhase) var phase
     @Environment(\.whatsNew) var whatsNewEnvironment
     @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
     @State var addTrackerSheetPresented: Bool = false
@@ -41,19 +42,12 @@ struct ContentView: View {
                         }
                     } else {
                         List {
-                            #if DEBUG
-                            Section(header: Text("Debug")) {
-                                Button("Present 'What's New' Sheet") {
-                                    whatsNew = whatsNewEnvironment.whatsNewCollection.last!
-                                }
-                                .sheet(whatsNew: $whatsNew)
-                            }
-                            #endif
                             Section(header: Text(stealth ? "Trackers" : "Sobriety Trackers")) {
                                 ForEach(entries) { entry in
                                     if entry.startDate != nil && entry.name != nil {
                                         NavigationLink(tag: entry.name ?? UUID().uuidString, selection: $linkSelection) {
                                             RingView(entry)
+                                                .blur(radius: phase != .active ? 20 : 0)
                                         } label: {
                                             SobrietyEntryLabel(entry)
                                         }
@@ -88,6 +82,7 @@ struct ContentView: View {
                     ToolbarItem(placement: .navigationBarLeading) {
                         NavigationLink {
                             SettingsView()
+                                .blur(radius: phase != .active ? 20 : 0)
                         } label: {
                             Image(systemName: "gearshape")
                                 .resizable()
@@ -95,7 +90,7 @@ struct ContentView: View {
                         }
                     }
                     ToolbarItem(placement: .principal) {
-                        Text(stealth ? "" : "Sobretium")
+                        Text(stealth || phase != .active ? "" : "Sobretium")
                             .fixedSize(horizontal: true, vertical: false)
                             .font(.headline)
                     }
@@ -124,6 +119,7 @@ struct ContentView: View {
                     }
                 }
                 .whatsNewSheet()
+                .blur(radius: phase != .active ? 20 : 0)
             }
         }
         .onAppear(perform: authenticate)

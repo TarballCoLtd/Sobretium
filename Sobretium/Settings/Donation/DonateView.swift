@@ -54,8 +54,8 @@ struct DonateView: View {
                     Button {
                         Task.init(priority: .background) {
                             do {
-                                let fart = try await purchase(product)
-                                if fart != nil { thankYouDict[product.id] = true }
+                                let purchase = try await purchase(product)
+                                if purchase != nil { withAnimation { thankYouDict[product.id] = true } }
                             } catch {
                                 print(error)
                             }

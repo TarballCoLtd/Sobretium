@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct SobretiumWatch_Watch_AppApp: App {
+struct SobretiumWatchApp: App {
     @StateObject private var dataController = DataController()
     var body: some Scene {
         WindowGroup {
