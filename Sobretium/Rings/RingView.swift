@@ -10,6 +10,7 @@ import SwiftUI
 struct RingView: View {
     @Environment(\.presentationMode) var presentation
     @Environment(\.managedObjectContext) var moc
+    @Environment(\.scenePhase) var phase
     @AppStorage("ringType") var ringType: Bool = false
     @ObservedObject var entry: SobrietyEntry
     @State var editTrackerSheetPresented: Bool = false
@@ -33,7 +34,7 @@ struct RingView: View {
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text(entry.name ?? "Error")
+                Text(phase != .active ? "" : entry.name ?? "Error")
                     .fixedSize(horizontal: true, vertical: false)
                     .font(.headline)
             }

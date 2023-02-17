@@ -47,7 +47,7 @@ struct ContentView: View {
                                     if entry.startDate != nil && entry.name != nil {
                                         NavigationLink(tag: entry.name ?? UUID().uuidString, selection: $linkSelection) {
                                             RingView(entry)
-                                                .blur(radius: phase != .active ? 30 : 0)
+                                                .blur(radius: phase != .active ? 20 : 0)
                                         } label: {
                                             SobrietyEntryLabel(entry)
                                         }
@@ -82,7 +82,7 @@ struct ContentView: View {
                     ToolbarItem(placement: .navigationBarLeading) {
                         NavigationLink {
                             SettingsView()
-                                .blur(radius: phase != .active ? 30 : 0)
+                                .blur(radius: phase != .active ? 20 : 0)
                         } label: {
                             Image(systemName: "gearshape")
                                 .resizable()
@@ -90,7 +90,7 @@ struct ContentView: View {
                         }
                     }
                     ToolbarItem(placement: .principal) {
-                        Text(stealth ? "" : "Sobretium")
+                        Text(stealth || phase != .active ? "" : "Sobretium")
                             .fixedSize(horizontal: true, vertical: false)
                             .font(.headline)
                     }
