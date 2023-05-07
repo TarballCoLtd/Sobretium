@@ -10,19 +10,20 @@ import LocalAuthentication
 import WhatsNewKit
 
 struct ContentView: View {
-    @AppStorage("stealth") var stealth: Bool = false
-    @AppStorage("biometry") var biometry: Bool = false
-    @AppStorage("launchCount") var launchCount: Int = 0
+    @AppStorage("stealth") var stealth = false
+    @AppStorage("biometry") var biometry = false
+    @AppStorage("launchCount") var launchCount = 0
     @Environment(\.managedObjectContext) var moc
     @Environment(\.scenePhase) var phase
     @Environment(\.whatsNew) var whatsNewEnvironment
     @FetchRequest(sortDescriptors: []) var entries: FetchedResults<SobrietyEntry>
-    @State var addTrackerSheetPresented: Bool = false
-    @State var editTrackerSheetPresented: Bool = false
+    @State var addTrackerSheetPresented = false
+    @State var editTrackerSheetPresented = false
     @State var deletionCandidate: SobrietyEntry?
-    @State var deletionAlertPresented: Bool = false
-    @State var authenticated: Bool = false
+    @State var deletionAlertPresented = false
+    @State var authenticated = false
     @State var linkSelection: String?
+    @State var radius: CGFloat = 0.0
     #if DEBUG
     @State var whatsNew: WhatsNew?
     #endif
@@ -47,7 +48,10 @@ struct ContentView: View {
                                     if entry.startDate != nil && entry.name != nil {
                                         NavigationLink(tag: entry.name ?? UUID().uuidString, selection: $linkSelection) {
                                             RingView(entry)
-                                                .blur(radius: phase != .active ? 20 : 0)
+                                                .blur(radius: radius)
+                                                .onChange(of: phase) { _ in
+                                                    radius = phase != .active ? 20 : 0
+                                                }
                                         } label: {
                                             SobrietyEntryLabel(entry)
                                         }
@@ -82,7 +86,7 @@ struct ContentView: View {
                     ToolbarItem(placement: .navigationBarLeading) {
                         NavigationLink {
                             SettingsView()
-                                .blur(radius: phase != .active ? 20 : 0)
+                                .blur(radius: radius)
                         } label: {
                             Image(systemName: "gearshape")
                                 .resizable()
@@ -119,7 +123,7 @@ struct ContentView: View {
                     }
                 }
                 .whatsNewSheet()
-                .blur(radius: phase != .active ? 20 : 0)
+                .blur(radius: radius)
             }
         }
         .onAppear(perform: authenticate)
